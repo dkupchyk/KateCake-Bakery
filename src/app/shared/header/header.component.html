@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header-expanded" *ngIf="screenWidth > 768">
   <div class="header-list">
     <a class="link" routerLink="/menu" routerLinkActive="active">Торты</a>
     <a class="link" routerLink="/menu" routerLinkActive="active">Чизкейки</a>
@@ -10,4 +10,27 @@
     <a class="link" routerLink="/menu" routerLinkActive="active">Макароны</a>
     <a class="link" routerLink="/menu" routerLinkActive="active">Эскимо-кейкпопсы</a>
   </div>
+</div>
+
+
+<div class="header-shrinked" *ngIf="screenWidth <= 768">
+  <div id="header-shrinked" class="header-list overlay">
+    <a class="closebtn" (click)="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a class="link" routerLink="/menu" routerLinkActive="active">Торты</a>
+      <a class="link" routerLink="/menu" routerLinkActive="active">Чизкейки</a>
+      <a class="link" routerLink="/menu" routerLinkActive="active">Капкейки</a>
+      <a class="link" routerLink="/menu" routerLinkActive="active">Макароны</a>
+      <a class="link" routerLink="/menu" routerLinkActive="active">Эскимо-кейкпопсы</a>
+    </div>
+  </div>
+
+  <div class="options">
+    <img class="menu" src="assets/icons/open-menu.svg" (click)="openNav()" alt="menu">
+    <div class="logo">
+      <p class="with-love-text" routerLink="/menu" routerLinkActive="active">with love</p>
+      <p class="kate-cake-text" routerLink="/menu" routerLinkActive="active">Kate Cake</p>
+    </div>
+  </div>
+
 </div>

@@ -1,6 +1,6 @@
 @import '../variables.less';
 
-.header {
+.header-expanded {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3vw;
   text-align: center;
@@ -27,8 +27,7 @@
       font-family: 'Dancing Script', cursive;
       color: @primary-peach;
       display: inline-block;
-      margin: 0px 25px ;
-      horiz-align: center;
+      margin: 0px 25px;
 
       .with-love-text {
         font-size: 2vw;
@@ -42,3 +41,95 @@
     }
   }
 }
+
+
+.header-shrinked {
+  height: 100vh;
+
+  & .options {
+    height: 100%;
+    margin: 5%;
+
+    & .logo {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      color: @primary-peach;
+      margin: 50% auto;
+
+      & .with-love-text,
+      & .kate-cake-text {
+        margin: 0;
+      }
+
+      & .with-love-text {
+        font-size: 12vw;
+      }
+
+      & .kate-cake-text {
+        font-size: 18vw;
+      }
+    }
+
+    & .menu {
+      outline: none;
+      height: 7vh;
+      padding: 4%;
+    }
+  }
+
+  & .overlay {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    display: flex;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: @primary-peach;
+    opacity: 0.95;
+    overflow: hidden;
+    transition: 0.5s;
+
+    & .overlay-content {
+      position: relative;
+      margin: auto;
+      text-align: center;
+      display: block;
+
+      & .link {
+        cursor: pointer;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 36px;
+        color: white;
+        display: block;
+        opacity: 0.6;
+        -webkit-transition: .3s;
+        transition: .3s;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: white;
+          opacity: 1;
+          border-bottom: 4px solid white;
+        }
+
+        &:hover {
+          margin-top: 5%;
+        }
+      }
+    }
+
+    & .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+      color: white;
+    }
+  }
+}
+
