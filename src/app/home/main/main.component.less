@@ -16,7 +16,6 @@
   }
 
   .text {
-    text-align: center;
     font-weight: 400;
     font-size: 2vw;
     width: 30vw;
@@ -31,10 +30,11 @@
     border: 2px solid @primary-peach;
     border-radius: 15px;
     padding: 5px 25px;
-    height: 7vh;
+    height: 8vh;
     cursor: pointer;
     background-color: white;
     color: @primary-peach;
+    transition: .5s;
 
     font-size: 18px;
     font-weight: 400;
@@ -47,4 +47,20 @@
     }
 
   }
+}
+
+.text-column {
+  text-align: center;
+  margin: 8% auto;
+}
+
+.stain {
+  position: absolute;
+  z-index: -1;
+
+  width: auto;
+  height: 105vh;
+
+  top: -170px;
+  right: 0;
 }
