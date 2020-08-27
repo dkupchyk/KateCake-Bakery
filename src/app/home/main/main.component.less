@@ -10,7 +10,7 @@
 
   .cake {
     position: relative;
-    left: -50px;
+    left: -10px;
     width: 50vw;
     height: 75vh;
   }
@@ -32,11 +32,11 @@
     padding: 5px 25px;
     height: 8vh;
     cursor: pointer;
-    background-color: white;
+    background-color: @primary-white;
     color: @primary-peach;
     transition: .5s;
 
-    font-size: 18px;
+    font-size: 1.5vw;
     font-weight: 400;
 
     &:hover {
@@ -51,16 +51,41 @@
 
 .text-column {
   text-align: center;
-  margin: 8% auto;
+  margin: 14vh auto;
 }
 
-.stain {
-  position: absolute;
-  z-index: -1;
-
+.gray-stain {
   width: auto;
   height: 105vh;
 
   top: -170px;
   right: 0;
+}
+
+@media only screen and (max-width: 770px) {
+  .main-row {
+    display: block;
+
+    .cake {
+      width: 90vw;
+      height: 60vh;
+    }
+
+    .text {
+      font-size: 8vw;
+      width: 80vw;
+      margin: 15% auto;
+    }
+
+    .choose-cake-button {
+      padding: 5px 25px;
+      width: 80vw;
+      height: 13vh;
+      font-size: 7vw;
+    }
+  }
+
+  .gray-stain {
+    opacity: 0;
+  }
 }
