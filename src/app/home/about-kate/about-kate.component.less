@@ -34,5 +34,34 @@
       font-size: 1.5vw;
     }
   }
+}
+
+@media only screen and (max-width: 770px) {
+  .about-kate-row {
+    display: block;
+    width: 90vw;
+    margin-top: 40%;
+
+    text-align: center;
+
+    & .portrait {
+      width: 80vw;
+      margin: 2% auto;
+    }
+
+    & .text-column {
+      width: 100%;
+
+      & .heading {
+        right: 0;
+        font-size: 12vw;
+      }
+
+      & .detailed-text {
+        margin: 10% 5%;
+        font-size: 5vw;
+      }
+    }
+  }
 
 }
