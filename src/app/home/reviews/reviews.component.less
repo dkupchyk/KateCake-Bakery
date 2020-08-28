@@ -20,16 +20,59 @@
 
     & .carousel {
       width: 70vw;
+    }
 
-      .carousel-item {
-        width: 30vw;
-        margin: 1500px;
+    .quote {
+      font-family: 'Playfair Display SC', serif;
+      font-size: 10vw;
+      margin: 0;
+    }
+
+    .text {
+      position: relative;
+      top: -50px;
+    }
+
+    .author {
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .reviews-section {
+
+    & .heading {
+      font-size: 12vw;
+    }
+
+    & .reviews-row {
+      display: flex;
+      position: relative;
+      justify-content: center;
+
+      & .reviews-col {
+        display: block;
+      }
+
+      & .carousel {
+        width: 70vw;
+      }
+
+      & .quote {
+        font-size: 25vw;
+      }
+
+      & .text {
+        font-size: 5vw;
+        top: -40px;
+      }
+
+      .author {
+        margin-bottom: 50px;
       }
     }
   }
 }
 
-._ngcontent-nyk-c22 {
-  color: @primary-peach;
-  background-color: @primary-peach;
-}

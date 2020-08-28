@@ -9,8 +9,9 @@
           carouselSlide
           *ngFor="let review of reviews"
           class="carousel-item">
-          <p class="text">"{{review.text}}"</p>
-          <h3 class="header">{{review.author}}</h3>
+          <p class="quote">&#8220;</p>
+          <p class="text">{{review.text}}"</p>
+          <h3 class="author">{{review.author}}</h3>
         </ng-template>
       </owl-carousel-o>
     </div>
