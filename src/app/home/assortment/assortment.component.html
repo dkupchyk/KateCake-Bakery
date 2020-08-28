@@ -1,0 +1,9 @@
+<div class="assortment-section">
+<h3 class="main-heading">Assortment</h3>
+  <div class="assortment-row">
+    <div class="assortment-col" *ngFor="let assortmentItem of assortmentArray">
+      <img class="assortment-image" src="{{assortmentItem.imagePath}}" alt="item">
+      <p class="heading">{{assortmentItem.title}}</p>
+    </div>
+  </div>
+</div>
