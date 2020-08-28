@@ -6,13 +6,17 @@ import {SharedModule} from '../shared/shared.module';
 import { MainComponent } from './main/main.component';
 import { AboutKateComponent } from './about-kate/about-kate.component';
 import { AssortmentComponent } from './assortment/assortment.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     HomeComponent,
     MainComponent,
     AboutKateComponent,
-    AssortmentComponent
+    AssortmentComponent,
+    ReviewsComponent
   ],
   exports: [
     HomeComponent
@@ -20,7 +24,9 @@ import { AssortmentComponent } from './assortment/assortment.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    CarouselModule,
+    BrowserAnimationsModule,
   ],
   providers: []
 })
