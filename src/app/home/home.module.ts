@@ -9,6 +9,7 @@ import { AssortmentComponent } from './assortment/assortment.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocialsComponent } from './socials/socials.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainComponent,
     AboutKateComponent,
     AssortmentComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    SocialsComponent
   ],
   exports: [
     HomeComponent

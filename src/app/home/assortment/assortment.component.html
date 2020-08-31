@@ -1,5 +1,5 @@
 <div class="assortment-section">
-<h3 class="main-heading">Assortment</h3>
+<h3 class="heading">Assortment</h3>
 
   <div class="assortment-row">
     <div class="assortment-col" *ngFor="let assortmentItem of assortmentArray">
@@ -7,7 +7,7 @@
         <img class="image assortment-image" src="{{assortmentItem.imagePath}}" alt="item">
         <img class="image assortment-image-hover" src="{{assortmentItem.hoverImagePath}}" alt="item">
       </div>
-      <p class="heading">{{assortmentItem.title}}</p>
+      <p class="item-heading">{{assortmentItem.title}}</p>
     </div>
   </div>
 
