@@ -12,7 +12,9 @@
   font-size: 1.8vw;
   font-weight: 400;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: @primary-peach;
     border-color: @primary-peach;
     color: @primary-white;
@@ -20,3 +22,11 @@
     outline: none;
   }
 }
+
+.stain {
+  position: absolute;
+  z-index: -1;
+  width: auto;
+  opacity: 0.8;
+}
+

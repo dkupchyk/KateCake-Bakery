@@ -57,17 +57,23 @@
 @media only screen and (max-width: 770px) {
   .assortment-section {
     margin: 35% 0;
+    //margin: 0 15px;
 
     & .main-heading {
       font-size: 12vw;
     }
 
     & .assortment-row {
-      & .assortment-col {
-        margin-bottom: 50px;
+      display: block;
 
-        & .assortment-image {
+      & .assortment-col {
+        margin: 0 0 50px 0;
+        width: 100%;
+
+        & .swap-on-hover {
+          margin: auto;
           width: 80vw;
+          height: 60vh;
         }
 
         & .heading {
