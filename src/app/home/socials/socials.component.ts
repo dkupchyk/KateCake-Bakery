@@ -28,6 +28,8 @@ export class SocialsComponent implements OnInit {
         'assets/images/main/instagram-row/2.jpg',
         'assets/images/main/instagram-row/3.jpg'
       ];
+
+    console.log(this.screenWidth);
   }
 
   @HostListener('window:resize', ['$event'])

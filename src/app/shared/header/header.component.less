@@ -18,7 +18,9 @@
       color: @primary-black;
       font-weight: 500;
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:focus {
         color: @primary-peach;
       }
     }
@@ -32,11 +34,13 @@
       .with-love-text {
         font-size: 2vw;
         margin: 0;
+        outline: none;
       }
 
       .kate-cake-text {
         font-size: 4vw;
         margin: 0;
+        outline: none;
       }
     }
   }
