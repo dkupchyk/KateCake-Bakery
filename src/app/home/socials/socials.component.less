@@ -18,14 +18,14 @@
 }
 
 .socials-row {
-  background-color: @lightpeach;
-  height: 35vh;
+  background-color: fade(@primary-peach, 30%);
+  height: 40vh;
   width: 100vw;
 
   .header-list {
     display: flex;
     justify-content: center;
-    //margin-top: 30px;
+    padding-top: 7%;
 
     .link {
       display: inline-block;
@@ -40,19 +40,24 @@
     }
 
     .logo {
+      text-align: center;
       font-family: 'Dancing Script', cursive;
-      color: @primary-peach;
+      color: @primary-black;
       display: inline-block;
       margin: 0px 25px;
 
       .with-love-text {
         font-size: 2vw;
         margin: 0;
+        outline: none;
+
       }
 
       .kate-cake-text {
         font-size: 4vw;
         margin: 0;
+        outline: none;
+
       }
     }
   }
