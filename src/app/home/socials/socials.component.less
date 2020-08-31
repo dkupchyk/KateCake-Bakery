@@ -64,13 +64,98 @@
 
 .overlay-links {
   position: absolute;
+  z-index: 1;
   background-color: @primary-white;
   border-radius: 10px;
   height: 10vh;
   width: 40vw;
   top: 30vh;
   left: 30vw;
+  justify-content: center;
+
+  & .horizontal-line {
+    margin-top: 3vh;
+    height: 25px;
+  }
+
+  & .social-links {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+
+    & .social-link {
+      display: flex;
+      width: calc(100% / 3);
+      justify-content: center;
+      margin-top: 3.3vh;
+
+      & .icon {
+        width: 25px;
+      }
+
+      & .link {
+        color: @primary-black;
+        text-decoration: none;
+        margin-left: 10%;
+      }
+    }
+  }
 }
+
+
+@media only screen and (max-width: 1024px) {
+
+  //.photos-row {
+  //  display: flex;
+  //  height: 35vh;
+  //
+  //  .image {
+  //    width: calc(100vw / 3);
+  //    height: 100%;
+  //  }
+  //}
+
+  .overlay-links {
+    height: 25vh;
+    width: 70vw;
+    top: 30vh;
+    left: 15vw;
+
+    & .social-links {
+      width: 100%;
+      margin: 0;
+      display: block;
+
+      & .social-link {
+        width: 100%;
+
+        & .link {
+          margin-left: 5%;
+          font-size: 3vh;
+        }
+      }
+    }
+  }
+
+  .socials-row {
+    text-align: center;
+
+    .header-list {
+      padding-top: 25vh;
+
+      .logo {
+        .with-love-text {
+          font-size: 8vw;
+        }
+
+        .kate-cake-text {
+          font-size: 10vw;
+        }
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 770px) {
 
@@ -81,6 +166,46 @@
     .image {
       width: calc(100vw / 3);
       height: 100%;
+    }
+  }
+
+  .overlay-links {
+    height: 25vh;
+    width: 70vw;
+    top: 30vh;
+    left: 15vw;
+
+    & .social-links {
+      width: 100%;
+      margin: 0;
+      display: block;
+
+      & .social-link {
+        width: 100%;
+
+        & .link {
+          margin-left: 5%;
+          font-size: 3vh;
+        }
+      }
+    }
+  }
+
+  .socials-row {
+    text-align: center;
+
+    .header-list {
+      padding-top: 25vh;
+
+      .logo {
+        .with-love-text {
+          font-size: 8vw;
+        }
+
+        .kate-cake-text {
+          font-size: 10vw;
+        }
+      }
     }
   }
 }
