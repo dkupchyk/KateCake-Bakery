@@ -1,5 +1,12 @@
 @import '../home.component.less';
 
+.socials {
+  position: relative;
+  right: 10px;
+  width: 100vw + 10px;
+  height: 65vh;
+}
+
 .photos-row {
   display: flex;
   height: 35vh;
@@ -7,6 +14,47 @@
   .image {
     width: calc(100vw / 6);
     height: 100%;
+  }
+}
+
+.socials-row {
+  background-color: @lightpeach;
+  height: 35vh;
+  width: 100vw;
+
+  .header-list {
+    display: flex;
+    justify-content: center;
+    //margin-top: 30px;
+
+    .link {
+      display: inline-block;
+      margin: auto 1.5vw;
+      text-decoration: none;
+      color: @primary-black;
+      font-weight: 500;
+
+      &:hover {
+        color: @primary-peach;
+      }
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      color: @primary-peach;
+      display: inline-block;
+      margin: 0px 25px;
+
+      .with-love-text {
+        font-size: 2vw;
+        margin: 0;
+      }
+
+      .kate-cake-text {
+        font-size: 4vw;
+        margin: 0;
+      }
+    }
   }
 }
 
