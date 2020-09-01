@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from '../app-routing.module';
 import {CatalogListComponent} from './catalog-list.component';
 import {SharedModule} from '../shared/shared.module';
-import {ProductsService} from './products.service';
 import {ProductDetailedComponent} from './product-detailed/product-detailed.component';
+import {CategoriesService} from './categories.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import {ProductDetailedComponent} from './product-detailed/product-detailed.comp
     CatalogListComponent,
     ProductDetailedComponent
   ],
-  providers: [ProductsService],
+  providers: [CategoriesService],
 })
 export class CatalogModule {
 }

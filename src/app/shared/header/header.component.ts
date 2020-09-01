@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {ProductsService} from '../../catalog-list/products.service';
+import {CategoriesService} from '../../catalog-list/categories.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   screenWidth: number;
 
   constructor(private router: Router,
-              private productService: ProductsService) {
+              private productService: CategoriesService) {
   }
 
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   changeSelectedProduct(selectedItem: string): void {
-    this.productService.selectedProduct.next(selectedItem);
+    this.productService.selectedCategory.next(selectedItem);
   }
 
   @HostListener('window:resize', ['$event'])

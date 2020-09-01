@@ -1,26 +1,31 @@
 <div class="header-expanded" *ngIf="screenWidth > 768">
   <div class="header-list">
     <a class="link"
-       (click)="changePath('Торты')"
+       (click)="changeSelectedProduct('Торты')"
+       routerLink="/catalog"
        routerLinkActive="active">
       Торты
     </a>
     <a class="link"
-       (click)="changePath('Чизкейки')"
+       (click)="changeSelectedProduct('Чизкейки')"
+       routerLink="/catalog"
        routerLinkActive="active">Чизкейки</a>
     <a class="link"
-       (click)="changePath('Капкейки')"
+       (click)="changeSelectedProduct('cupcakes')"
+       routerLink="/catalog"
        routerLinkActive="active">Капкейки</a>
     <div class="logo">
       <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
       <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>
     <a  class="link"
-        (click)="changePath('Макароны')"
+        (click)="changeSelectedProduct('macaroons')"
+        routerLink="/catalog"
         routerLinkActive="active">Макароны</a>
     <a class="link"
-       (click)="changePath('Эскимо-кейкпопсы')"
-       routerLinkActive="active">Эскимо-кейкпопсы</a>
+        (click)="changeSelectedProduct('eskimo')"
+        routerLink="/catalog"
+        routerLinkActive="active">Эскимо-кейкпопсы</a>
   </div>
 </div>
 

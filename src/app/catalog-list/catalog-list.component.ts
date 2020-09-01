@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ProductsService} from './products.service';
+import {Component, OnInit} from '@angular/core';
+import {CategoriesService} from './categories.service';
 import {PRODUCTS} from './products.constant';
 import {Product} from './product-detailed/product.model';
 
@@ -14,8 +14,8 @@ export class CatalogListComponent implements OnInit {
   productText: string;
   products: Product[] = [];
 
-  constructor(private productsService: ProductsService) {
-    this.productsService.selectedProduct.subscribe(
+  constructor(private productsService: CategoriesService) {
+    this.productsService.selectedCategory.subscribe(
       product => {
         switch (product) {
           case 'Торты':
