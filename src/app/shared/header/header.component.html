@@ -35,14 +35,12 @@
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <div class="overlay-content">
       <a class="link"
-         (click)="changeSelectedProduct('cakes')"
-         routerLink="/catalog"
+         (click)="changePath('Торты')"
          routerLinkActive="active">
         Торты
       </a>
       <a class="link"
-         (click)="changeSelectedProduct('cheesecakes')"
-         routerLink="/catalog"
+         (click)="changePath('Чизкейки')"
          routerLinkActive="active">Чизкейки</a>
       <a class="link"
          (click)="changeSelectedProduct('cupcakes')"
@@ -62,8 +60,8 @@
   <div class="options">
     <img class="menu" src="assets/icons/open-menu.svg" (click)="openNav()" alt="menu">
     <div class="logo">
-      <p class="with-love-text" routerLink="/menu" routerLinkActive="active">with love</p>
-      <p class="kate-cake-text" routerLink="/menu" routerLinkActive="active">Kate Cake</p>
+      <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
+      <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>
   </div>
 

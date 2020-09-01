@@ -51,6 +51,56 @@ export const PRODUCTS = [
   {
     name: 'Чизкейки',
     imagePath: 'assets/images/main/main-cake.png',
-    detailedText: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
+    detailedText: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.',
+    items: [
+      new Product(
+        'cheese 1',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      ),
+      new Product(
+        'cheese 2',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      ),
+      new Product(
+        'cheese 3',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      ),
+      new Product(
+        'cheese 4',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      ),
+      new Product(
+        'cheese 5',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      ),
+      new Product(
+        'cheese 6',
+        ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
+        'kdnvkdflnvkdf',
+        ',kvnfdkjvnf',
+        '200 г',
+        300
+      )
+    ],
   }
 ];

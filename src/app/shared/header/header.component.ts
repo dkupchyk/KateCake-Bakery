@@ -34,4 +34,10 @@ export class HeaderComponent implements OnInit {
   closeNav(): void {
     (document.getElementById('header-shrinked') as HTMLElement).style.width = '0';
   }
+
+  changePath(link: string): void {
+    this.closeNav();
+    this.changeSelectedProduct(link);
+    this.router.navigate(['catalog']);
+  }
 }

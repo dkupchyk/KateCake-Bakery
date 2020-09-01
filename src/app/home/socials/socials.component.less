@@ -2,8 +2,7 @@
 
 .socials {
   position: relative;
-  right: 10px;
-  width: 100vw + 10px;
+  width: 100vw;
   height: 65vh;
 }
 
@@ -50,7 +49,6 @@
         font-size: 2vw;
         margin: 0;
         outline: none;
-
       }
 
       .kate-cake-text {
@@ -62,58 +60,14 @@
   }
 }
 
-.overlay-links {
+.overlay {
   position: absolute;
   z-index: 1;
-  background-color: @primary-white;
-  border-radius: 10px;
-  height: 10vh;
-  width: 40vw;
   top: 30vh;
   left: 30vw;
-  justify-content: center;
-
-  & .horizontal-line {
-    margin-top: 3vh;
-    height: 25px;
-  }
-
-  & .social-links {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-
-    & .social-link {
-      display: flex;
-      width: calc(100% / 3);
-      justify-content: center;
-      margin-top: 3.3vh;
-
-      & .icon {
-        width: 25px;
-      }
-
-      & .link {
-        color: @primary-black;
-        text-decoration: none;
-        margin-left: 10%;
-      }
-    }
-  }
 }
 
-
 @media only screen and (max-width: 1024px) {
-
-  //.photos-row {
-  //  display: flex;
-  //  height: 35vh;
-  //
-  //  .image {
-  //    width: calc(100vw / 3);
-  //    height: 100%;
-  //  }
-  //}
   .overlay-links {
     height: 25vh;
     width: 70vw;
@@ -161,6 +115,7 @@
   .photos-row {
     display: flex;
     height: 35vh;
+    width: auto;
 
     .image {
       width: calc(100vw / 3);

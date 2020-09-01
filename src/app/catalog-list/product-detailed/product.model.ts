@@ -1,5 +1,4 @@
 export class Product {
-
   constructor(public name: string,
               public images: string[],
               public ingredients: string,
@@ -7,5 +6,4 @@ export class Product {
               public weight: string,
               public price: number) {
   }
-
 }

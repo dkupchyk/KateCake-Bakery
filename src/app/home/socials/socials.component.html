@@ -8,28 +8,7 @@
     </div>
   </div>
 
-  <div class="overlay-links">
-    <div class="social-links">
-      <div class="social-link">
-        <img class="icon" src="assets/icons/instagram.svg" alt="stain">
-        <a class="link" routerLink="/menu" routerLinkActive="active">instagram</a>
-      </div>
-
-      <img *ngIf="screenWidth > 770" class="horizontal-line" src="assets/icons/horizontal-line.svg" alt="line">
-
-      <div class="social-link">
-        <img class="icon" src="assets/icons/telegram.svg" alt="stain">
-        <a class="link" routerLink="/menu" routerLinkActive="active">telegram</a>
-      </div>
-
-      <img *ngIf="screenWidth > 770" class="horizontal-line" src="assets/icons/horizontal-line.svg" alt="line">
-
-      <div class="social-link">
-        <img class="icon" src="assets/icons/mail.svg" alt="stain">
-        <a class="link" routerLink="/menu" routerLinkActive="active">email</a>
-      </div>
-    </div>
-  </div>
+  <app-socials-widget class="overlay"></app-socials-widget>
 
   <div class="socials-row">
     <div class="header-list">

@@ -1,0 +1,96 @@
+@import '../variables';
+
+.footer {
+  background-color: fade(@primary-peach, 30%);
+  padding: 4%;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+
+  .col {
+    display: block;
+  }
+}
+
+.col-logo {
+  width: 25vw;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  color: @primary-black;
+  display: inline-block;
+  margin-top: 50px;
+
+  .with-love-text {
+    font-size: 2vw;
+    margin: 0;
+    outline: none;
+  }
+
+  .kate-cake-text {
+    font-size: 4vw;
+    margin: 0;
+    outline: none;
+  }
+}
+
+.col-more {
+  width: 75vw;
+  text-align: center;
+
+  & .link {
+    color: @primary-black;
+    text-decoration: none;
+    margin: 0 10px 30px 10px;
+  }
+
+  & .row {
+    justify-content: center;
+  }
+
+  & .overlay {
+    position: relative;
+    left: 14vw;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+
+  .footer {
+    background-color: fade(@primary-peach, 30%);
+    padding: 4% 0;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .col-logo {
+    width: 100vw;
+    margin-top: 50px;
+
+    .with-love-text {
+      font-size: 8vw;
+    }
+
+    .kate-cake-text {
+      font-size: 12vw;
+    }
+  }
+
+  .col-more {
+    width: 100vw;
+    margin: 20% 0 10% 0;
+
+    & .additional-text {
+      margin-top: 20px;
+      font-size: 6vw;
+    }
+
+    & .link {
+      font-size: 6vw;
+      margin: 0 10px 30px 10px;
+    }
+  }
+}
