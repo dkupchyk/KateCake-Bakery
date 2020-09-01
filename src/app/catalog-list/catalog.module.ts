@@ -5,6 +5,7 @@ import {CatalogListComponent} from './catalog-list.component';
 import {SharedModule} from '../shared/shared.module';
 import {ProductDetailedComponent} from './product-detailed/product-detailed.component';
 import {CategoriesService} from './categories.service';
+import {ProductsService} from './product-detailed/products.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {CategoriesService} from './categories.service';
     CatalogListComponent,
     ProductDetailedComponent
   ],
-  providers: [CategoriesService],
+  providers: [CategoriesService, ProductsService],
 })
 export class CatalogModule {
 }

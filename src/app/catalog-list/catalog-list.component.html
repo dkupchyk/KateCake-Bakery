@@ -11,7 +11,10 @@
 <section class="catalog">
   <div class="catalog-row">
     <div class="catalog-col" *ngFor="let product of products">
-      <img class="image" src="{{product.images[0]}}" alt="cake">
+      <img class="image"
+           src="{{product.mainPhoto}}"
+           alt="cake"
+      (click)="changeSelectedProduct(product)">
       <p class="product-name">{{product.name}}</p>
       <p class="product-details">{{product.weight}} / {{product.price}} грн</p>
     </div>

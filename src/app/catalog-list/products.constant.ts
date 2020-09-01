@@ -8,14 +8,16 @@ export const PRODUCTS = [
     items: [
       new Product(
         'торт 1',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
-        'kdnvkdflnvkdf',
-        ',kvnfdkjvnf',
+        'kdnvk dflnvkdvn kfjbkf gkjdrngkld rgbkjd rgkljbrdj kgbrkjeb gkjrdbgk jrdhgkjdrshbgkv jdbkjg bd  kjfg brkgjf',
+        'kdnvk dflnvkdvn kfjbkf gkjdrngkld rgbkjd rgkljbrdj kgbrkjeb gkjrdbgk jrdhgkjdrshbgkv jdbkjg bd  kjfg brkgjf',
         '200 г',
         300
       ),
       new Product(
         'торт 2',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -24,6 +26,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'торт 3',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -32,6 +35,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'торт 4',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -40,6 +44,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'торт 5',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -55,6 +60,7 @@ export const PRODUCTS = [
     items: [
       new Product(
         'cheese 1',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -63,6 +69,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'cheese 2',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -71,6 +78,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'cheese 3',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -79,6 +87,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'cheese 4',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -87,6 +96,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'cheese 5',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
@@ -95,6 +105,7 @@ export const PRODUCTS = [
       ),
       new Product(
         'cheese 6',
+        'assets/images/main/main-cake.png',
         ['assets/images/main/main-cake.png', 'assets/images/main/main-cake.png'],
         'kdnvkdflnvkdf',
         ',kvnfdkjvnf',
