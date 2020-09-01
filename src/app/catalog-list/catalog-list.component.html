@@ -1,0 +1,19 @@
+<section class="intro">
+  <div class="intro-row">
+    <img class="intro-col image" src="{{productImagePath}}" alt="cake">
+    <div class="intro-col text">
+      <h3 class="main-heading">{{productName}}</h3>
+      <p class="text">{{productText}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="catalog">
+  <div class="catalog-row">
+    <div class="catalog-col" *ngFor="let product of products">
+      <img class="image" src="{{product.images[0]}}" alt="cake">
+      <p>{{product.name}}</p>
+      <p>{{product.weight}} / {{product.price}} грн</p>
+    </div>
+  </div>
+</section>

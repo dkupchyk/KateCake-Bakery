@@ -1,14 +1,31 @@
 <div class="header-expanded" *ngIf="screenWidth > 768">
   <div class="header-list">
-    <a class="link" routerLink="/menu" routerLinkActive="active">Торты</a>
-    <a class="link" routerLink="/menu" routerLinkActive="active">Чизкейки</a>
-    <a class="link" routerLink="/menu" routerLinkActive="active">Капкейки</a>
+    <a class="link"
+       (click)="changeSelectedProduct('Торты')"
+       routerLink="/catalog"
+       routerLinkActive="active">
+      Торты
+    </a>
+    <a class="link"
+       (click)="changeSelectedProduct('Чизкейки')"
+       routerLink="/catalog"
+       routerLinkActive="active">Чизкейки</a>
+    <a class="link"
+       (click)="changeSelectedProduct('cupcakes')"
+       routerLink="/catalog"
+       routerLinkActive="active">Капкейки</a>
     <div class="logo">
-      <p class="with-love-text" routerLink="/menu" routerLinkActive="active">with love</p>
-      <p class="kate-cake-text" routerLink="/menu" routerLinkActive="active">Kate Cake</p>
+      <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
+      <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>
-    <a class="link" routerLink="/menu" routerLinkActive="active">Макароны</a>
-    <a class="link" routerLink="/menu" routerLinkActive="active">Эскимо-кейкпопсы</a>
+    <a  class="link"
+        (click)="changeSelectedProduct('macaroons')"
+        routerLink="/catalog"
+        routerLinkActive="active">Макароны</a>
+    <a class="link"
+        (click)="changeSelectedProduct('eskimo')"
+        routerLink="/catalog"
+        routerLinkActive="active">Эскимо-кейкпопсы</a>
   </div>
 </div>
 
@@ -17,11 +34,28 @@
   <div id="header-shrinked" class="header-list overlay">
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <div class="overlay-content">
-      <a class="link" routerLink="/menu" routerLinkActive="active">Торты</a>
-      <a class="link" routerLink="/menu" routerLinkActive="active">Чизкейки</a>
-      <a class="link" routerLink="/menu" routerLinkActive="active">Капкейки</a>
-      <a class="link" routerLink="/menu" routerLinkActive="active">Макароны</a>
-      <a class="link" routerLink="/menu" routerLinkActive="active">Эскимо-кейкпопсы</a>
+      <a class="link"
+         (click)="changeSelectedProduct('cakes')"
+         routerLink="/catalog"
+         routerLinkActive="active">
+        Торты
+      </a>
+      <a class="link"
+         (click)="changeSelectedProduct('cheesecakes')"
+         routerLink="/catalog"
+         routerLinkActive="active">Чизкейки</a>
+      <a class="link"
+         (click)="changeSelectedProduct('cupcakes')"
+         routerLink="/catalog"
+         routerLinkActive="active">Капкейки</a>
+      <a  class="link"
+          (click)="changeSelectedProduct('macaroons')"
+          routerLink="/catalog"
+          routerLinkActive="active">Макароны</a>
+      <a class="link"
+         (click)="changeSelectedProduct('eskimo')"
+         routerLink="/catalog"
+         routerLinkActive="active">>Эскимо-кейкпопсы</a>
     </div>
   </div>
 

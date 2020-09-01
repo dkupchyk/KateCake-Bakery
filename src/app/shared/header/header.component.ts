@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {ProductsService} from '../../catalog-list/products.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,16 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
   screenWidth: number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private productService: ProductsService) {
   }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
+  }
+
+  changeSelectedProduct(selectedItem: string): void {
+    this.productService.selectedProduct.next(selectedItem);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -27,10 +33,5 @@ export class HeaderComponent implements OnInit {
 
   closeNav(): void {
     (document.getElementById('header-shrinked') as HTMLElement).style.width = '0';
-  }
-
-  changePath(path: string): void {
-    this.closeNav();
-    this.router.navigate([path]);
   }
 }
