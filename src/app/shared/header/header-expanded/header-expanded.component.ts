@@ -7,6 +7,6 @@ import {HeaderComponent} from '../header.component';
   styleUrls: ['./header-expanded.component.less']
 })
 export class HeaderExpandedComponent {
-  constructor(private headerComponent: HeaderComponent) {
+  constructor(public headerComponent: HeaderComponent) {
   }
 }

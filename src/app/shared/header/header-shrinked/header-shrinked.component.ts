@@ -8,7 +8,7 @@ import {HeaderComponent} from '../header.component';
 })
 export class HeaderShrinkedComponent {
 
-  constructor(private headerComponent: HeaderComponent) {
+  constructor(public headerComponent: HeaderComponent) {
   }
 
   openNav(): void {
