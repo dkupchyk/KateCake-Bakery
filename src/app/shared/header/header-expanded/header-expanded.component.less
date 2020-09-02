@@ -1,0 +1,48 @@
+@import '../../variables.less';
+
+.header-expanded {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3vw;
+  text-align: center;
+  width: 100%;
+
+  .header-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    .link {
+      display: inline-block;
+      margin: auto 1.5vw;
+      text-decoration: none;
+      color: @primary-black;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @primary-peach;
+      }
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      color: @primary-peach;
+      display: inline-block;
+      margin: 0px 25px;
+
+      .with-love-text {
+        font-size: 2vw;
+        margin: 0;
+        outline: none;
+      }
+
+      .kate-cake-text {
+        font-size: 4vw;
+        margin: 0;
+        outline: none;
+      }
+    }
+  }
+}

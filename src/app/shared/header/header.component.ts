@@ -1,7 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CategoriesEnum} from '../constants/categories.constant';
-import {CatalogListComponent} from '../../catalog-list/catalog-list.component';
 import {DataStorageService} from '../data-storage.service';
 
 @Component({
@@ -25,18 +24,7 @@ export class HeaderComponent implements OnInit {
     this.screenWidth = event.target.innerWidth;
   }
 
-  openNav(): void {
-    (document.getElementById('header-shrinked') as HTMLElement).style.width = '100%';
-  }
-
-  closeNav(): void {
-    (document.getElementById('header-shrinked') as HTMLElement).style.width = '0';
-  }
-
-  changePath(category: CategoriesEnum): void {
-    if (this.screenWidth <= 768) {
-      this.closeNav();
-    }
+  changePath(): void {
     this.dataStorage.isLoading.next(true);
   }
 

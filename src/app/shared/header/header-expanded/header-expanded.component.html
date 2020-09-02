@@ -1,0 +1,40 @@
+<div class="header-expanded">
+  <div class="header-list">
+
+    <a class="link"
+       (click)="headerComponent.changePath()"
+       routerLink="/catalog"
+       fragment="{{headerComponent.categoriesEnum.Cakes}}"
+       routerLinkActive="active">Торты</a>
+
+    <a class="link"
+       (click)="headerComponent.changePath()"
+       routerLink="/catalog"
+       fragment="{{headerComponent.categoriesEnum.Cheesecakes}}"
+       routerLinkActive="active">Чизкейки</a>
+
+    <a class="link"
+       routerLink="/catalog"
+       fragment="{{headerComponent.categoriesEnum.Cupcakes}}"
+       (click)="headerComponent.changePath()"
+       routerLinkActive="active">Капкейки</a>
+
+    <div class="logo">
+      <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
+      <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
+    </div>
+
+    <a class="link"
+       routerLink="/catalog"
+       fragment="{{headerComponent.categoriesEnum.Macarons}}"
+       (click)="headerComponent.changePath()"
+       routerLinkActive="active">Макароны</a>
+
+    <a class="link"
+       routerLink="/catalog"
+       fragment="{{headerComponent.categoriesEnum.Eskimo}}"
+       (click)="headerComponent.changePath()"
+       routerLinkActive="active">Эскимо-кейкпопсы</a>
+
+  </div>
+</div>

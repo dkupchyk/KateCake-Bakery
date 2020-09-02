@@ -6,12 +6,16 @@ import { FooterComponent } from './footer/footer.component';
 import { SocialsWidgetComponent } from './socials-widget/socials-widget.component';
 import {DataStorageService} from './data-storage.service';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderShrinkedComponent } from './header/header-shrinked/header-shrinked.component';
+import { HeaderExpandedComponent } from './header/header-expanded/header-expanded.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SocialsWidgetComponent
+    SocialsWidgetComponent,
+    HeaderShrinkedComponent,
+    HeaderExpandedComponent
   ],
   imports: [
     BrowserModule,
