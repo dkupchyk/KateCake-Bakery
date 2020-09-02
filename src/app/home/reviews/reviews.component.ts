@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.less']
 })
-export class ReviewsComponent implements OnInit {
+export class ReviewsComponent {
   reviews = [
     {
       author: '@author',
@@ -60,11 +60,4 @@ export class ReviewsComponent implements OnInit {
       }
     },
   };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }

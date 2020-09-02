@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './assortment.component.html',
   styleUrls: ['./assortment.component.less']
 })
-export class AssortmentComponent implements OnInit {
+export class AssortmentComponent {
   assortmentArray = [
     {
       title: 'Торты',
@@ -34,11 +34,4 @@ export class AssortmentComponent implements OnInit {
     },
 
   ];
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
 }

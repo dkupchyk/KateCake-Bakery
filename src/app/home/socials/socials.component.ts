@@ -1,5 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-socials',
@@ -9,9 +8,6 @@ import {Router} from '@angular/router';
 export class SocialsComponent implements OnInit {
   screenWidth: number;
   photosRow = [];
-
-  constructor() {
-  }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;

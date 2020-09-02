@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {Router} from '@angular/router';
 
@@ -7,9 +7,10 @@ import {Router} from '@angular/router';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
-export class MainComponent{
+export class MainComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   toCakeCatalog(): void {
     this.router.navigate(['/catalog'], {fragment: CategoriesEnum.Cakes});
