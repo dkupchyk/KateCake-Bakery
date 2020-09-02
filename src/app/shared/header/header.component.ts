@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CategoriesService} from '../../catalog-list/categories.service';
+import {CategoriesEnum} from '../constants/categories.constant';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 
-  changeSelectedProduct(selectedItem: string): void {
+  changeSelectedProduct(selectedItem: CategoriesEnum): void {
     this.productService.selectedCategory.next(selectedItem);
   }
 
@@ -35,9 +36,13 @@ export class HeaderComponent implements OnInit {
     (document.getElementById('header-shrinked') as HTMLElement).style.width = '0';
   }
 
-  changePath(link: string): void {
+  changePath(category: CategoriesEnum): void {
     this.closeNav();
-    this.changeSelectedProduct(link);
+    this.changeSelectedProduct(category);
     this.router.navigate(['catalog']);
+  }
+
+  public get categoriesEnum(): typeof CategoriesEnum {
+    return CategoriesEnum;
   }
 }

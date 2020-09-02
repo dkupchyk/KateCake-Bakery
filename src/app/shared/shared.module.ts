@@ -4,6 +4,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FooterComponent } from './footer/footer.component';
 import { SocialsWidgetComponent } from './socials-widget/socials-widget.component';
+import {DataStorageService} from './data-storage.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { SocialsWidgetComponent } from './socials-widget/socials-widget.componen
   exports: [
     HeaderComponent,
     FooterComponent,
-    SocialsWidgetComponent
+    SocialsWidgetComponent,
+    HttpClientModule
   ],
-  providers: []
+  providers: [DataStorageService]
 })
 export class SharedModule {
 }

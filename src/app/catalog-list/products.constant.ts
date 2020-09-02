@@ -1,4 +1,4 @@
-import {Product} from './product-detailed/product.model';
+import {Product} from '../shared/models/product.model';
 
 export const PRODUCTS = [
   {

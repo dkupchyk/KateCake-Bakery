@@ -1,24 +1,29 @@
-<section class="intro">
-  <div class="intro-row">
-    <img class="intro-col image" src="{{productImagePath}}" alt="cake">
-    <div class="intro-col text">
-      <h3 class="main-heading">{{productName}}</h3>
-      <p class="text">{{productText}}</p>
-    </div>
-  </div>
-</section>
+<div *ngIf="category">
 
-<section class="catalog">
-  <div class="catalog-row">
-    <div class="catalog-col" *ngFor="let product of products">
-      <img class="image"
-           src="{{product.mainPhoto}}"
-           alt="cake"
-      (click)="changeSelectedProduct(product)">
-      <p class="product-name">{{product.name}}</p>
-      <p class="product-details">{{product.weight}} / {{product.price}} грн</p>
+  <section class="intro">
+    <div class="intro-row">
+      <img class="intro-col image" src="{{category.imagePath}}" alt="cake">
+      <div class="intro-col text">
+        <h3 class="main-heading">{{category.name}}</h3>
+        <p class="text">{{category.detailedText}}</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<app-footer></app-footer>
+  <section class="catalog">
+    <div class="catalog-row"  *ngIf="category.items" >
+      <div class="catalog-col" *ngFor="let product of category.items">
+        <img class="image"
+             src="{{product.mainPhoto}}"
+             alt="cake"
+             (click)="changeSelectedProduct(product)">
+        <p class="product-name">{{product.name}}</p>
+        <p class="product-details">{{product.weight}} / {{product.price}} грн</p>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+</div>
+

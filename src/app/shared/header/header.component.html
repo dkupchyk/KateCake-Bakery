@@ -1,17 +1,17 @@
 <div class="header-expanded" *ngIf="screenWidth > 768">
   <div class="header-list">
     <a class="link"
-       (click)="changeSelectedProduct('Торты')"
+       (click)="changeSelectedProduct(categoriesEnum.Cakes)"
        routerLink="/catalog"
        routerLinkActive="active">
       Торты
     </a>
     <a class="link"
-       (click)="changeSelectedProduct('Чизкейки')"
+       (click)="changeSelectedProduct(categoriesEnum.Cheesecakes)"
        routerLink="/catalog"
        routerLinkActive="active">Чизкейки</a>
     <a class="link"
-       (click)="changeSelectedProduct('cupcakes')"
+       (click)="changeSelectedProduct(categoriesEnum.Cupcakes)"
        routerLink="/catalog"
        routerLinkActive="active">Капкейки</a>
     <div class="logo">
@@ -19,11 +19,11 @@
       <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>
     <a  class="link"
-        (click)="changeSelectedProduct('macaroons')"
+        (click)="changeSelectedProduct(categoriesEnum.Macarons)"
         routerLink="/catalog"
         routerLinkActive="active">Макароны</a>
     <a class="link"
-        (click)="changeSelectedProduct('eskimo')"
+        (click)="changeSelectedProduct(categoriesEnum.Eskimo)"
         routerLink="/catalog"
         routerLinkActive="active">Эскимо-кейкпопсы</a>
   </div>
@@ -34,19 +34,19 @@
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <div class="overlay-content">
       <a class="link"
-         (click)="changePath('Торты')"
+         (click)="changePath(categoriesEnum.Cakes)"
          routerLinkActive="active">Торты</a>
       <a class="link"
-         (click)="changePath('Чизкейки')"
+         (click)="changePath(categoriesEnum.Cheesecakes)"
          routerLinkActive="active">Чизкейки</a>
       <a class="link"
-         (click)="changePath('Капкейки')"
+         (click)="changePath(categoriesEnum.Cupcakes)"
          routerLinkActive="active">Капкейки</a>
       <a  class="link"
-          (click)="changePath('Макароны')"
+          (click)="changePath(categoriesEnum.Macarons)"
           routerLinkActive="active">Макароны</a>
       <a class="link"
-         (click)="changePath('Эскимо-кейкпопсы')"
+         (click)="changePath(categoriesEnum.Eskimo)"
          routerLinkActive="active">Эскимо-кейкпопсы</a>
     </div>
   </div>
