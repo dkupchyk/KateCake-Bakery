@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoriesService} from './categories.service';
-import {PRODUCTS} from './products.constant';
 import {Product} from '../shared/models/product.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductsService} from './product-detailed/products.service';
