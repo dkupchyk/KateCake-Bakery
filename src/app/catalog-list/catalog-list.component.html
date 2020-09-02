@@ -1,8 +1,8 @@
-<div *ngIf="!category">
+<div *ngIf="isLoading">
   <h3 class="loading-text">Loading...</h3>
 </div>
 
-<div *ngIf="category">
+<div *ngIf="!isLoading">
   <div class="intro">
     <div class="intro-row">
       <img class="intro-col image" src="{{category.imagePath}}" alt="cake">

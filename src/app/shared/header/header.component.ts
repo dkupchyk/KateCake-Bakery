@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CategoriesEnum} from '../constants/categories.constant';
+import {CatalogListComponent} from '../../catalog-list/catalog-list.component';
+import {DataStorageService} from '../data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,8 @@ import {CategoriesEnum} from '../constants/categories.constant';
 export class HeaderComponent implements OnInit {
   screenWidth: number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private dataStorage: DataStorageService) {
   }
 
   ngOnInit(): void {
@@ -23,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openNav(): void {
-    (document.getElementById('header-shrinked') as HTMLElement).style.width = '100vw';
+    (document.getElementById('header-shrinked') as HTMLElement).style.width = '100%';
   }
 
   closeNav(): void {
@@ -31,10 +34,10 @@ export class HeaderComponent implements OnInit {
   }
 
   changePath(category: CategoriesEnum): void {
-    if (this.screenWidth < 770) {
+    if (this.screenWidth <= 768) {
       this.closeNav();
     }
-    this.router.navigate(['/catalog'], {fragment: category});
+    this.dataStorage.isLoading.next(true);
   }
 
   public get categoriesEnum(): typeof CategoriesEnum {

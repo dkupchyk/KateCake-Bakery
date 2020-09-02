@@ -9,19 +9,13 @@ import {CategoriesEnum} from '../constants/categories.constant';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  changePath(selectedCategory: CategoriesEnum): void {
-    this.router.navigate(['/catalog'], {fragment: selectedCategory});
-  }
-
   public get categoriesEnum(): typeof CategoriesEnum {
     return CategoriesEnum;
   }
-
-
 }

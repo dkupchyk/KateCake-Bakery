@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoriesEnum} from '../../shared/constants/categories.constant';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.less']
 })
-export class MainComponent implements OnInit {
+export class MainComponent{
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  toCakeCatalog(): void {
+    this.router.navigate(['/catalog'], {fragment: CategoriesEnum.Cakes});
   }
 
 }

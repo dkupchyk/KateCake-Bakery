@@ -14,9 +14,11 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./catalog-list.component.less']
 })
 export class CatalogListComponent implements OnInit, OnDestroy {
+
   categoryName: CategoriesEnum;
   category: Category;
-  subscription: Subscription;
+  subscription: Subscription[] = [];
+  isLoading = true;
 
   constructor(private productService: ProductsService,
               private dataStorage: DataStorageService,
@@ -25,17 +27,23 @@ export class CatalogListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription = this.route.fragment.subscribe(fragment => {
+    this.subscription.push(this.dataStorage.isLoading.subscribe(value => {
+      this.isLoading = value;
+    }));
+    this.subscription.push(this.route.fragment.subscribe(fragment => {
       this.categoryName = fragment as CategoriesEnum;
       this.dataStorage.fetchData(this.categoryName).pipe(take(1)).subscribe(
         categoryData => {
           this.category = categoryData;
+          this.isLoading = false;
         });
-    });
+    }));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription.forEach(subscription => {
+      subscription.unsubscribe();
+    });
   }
 
   changeSelectedProduct(product: Product): void {
