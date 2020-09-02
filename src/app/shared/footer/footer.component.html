@@ -8,19 +8,19 @@
       <p class="additional-text">Посмотреть также:</p>
       <div class="row">
         <a class="col link"
-           (click)="changePath('Торты')"
+           (click)="changePath(categoriesEnum.Cakes)"
            routerLinkActive="active">Торты</a>
         <a class="col link"
-           (click)="changePath('Чизкейки')"
+           (click)="changePath(categoriesEnum.Cheesecakes)"
            routerLinkActive="active">Чизкейки</a>
         <a class="col link"
-           (click)="changePath('Капкейки')"
+           (click)="changePath(categoriesEnum.Cupcakes)"
            routerLinkActive="active">Капкейки</a>
         <a class="col link"
-           (click)="changePath('Макароны')"
+           (click)="changePath(categoriesEnum.Macarons)"
            routerLinkActive="active">Макароны</a>
         <a class="col link"
-           (click)="changePath('Эскимо-кейкпопсы')"
+           (click)="changePath(categoriesEnum.Eskimo)"
            routerLinkActive="active">Эскимо-кейкпопсы</a>
       </div>
       <app-socials-widget class="overlay"></app-socials-widget>

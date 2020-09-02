@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {CategoriesService} from '../../catalog-list/categories.service';
 import {CategoriesEnum} from '../constants/categories.constant';
 
 @Component({
@@ -11,16 +10,11 @@ import {CategoriesEnum} from '../constants/categories.constant';
 export class HeaderComponent implements OnInit {
   screenWidth: number;
 
-  constructor(private router: Router,
-              private productService: CategoriesService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
-  }
-
-  changeSelectedProduct(selectedItem: CategoriesEnum): void {
-    this.productService.selectedCategory.next(selectedItem);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -37,9 +31,10 @@ export class HeaderComponent implements OnInit {
   }
 
   changePath(category: CategoriesEnum): void {
-    this.closeNav();
-    this.changeSelectedProduct(category);
-    this.router.navigate(['catalog']);
+    if (this.screenWidth < 770) {
+      this.closeNav();
+    }
+    this.router.navigate(['/catalog'], {fragment: category});
   }
 
   public get categoriesEnum(): typeof CategoriesEnum {

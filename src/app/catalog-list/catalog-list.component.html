@@ -1,6 +1,9 @@
-<div *ngIf="category">
+<div *ngIf="!category">
+  <h3 class="loading-text">Loading...</h3>
+</div>
 
-  <section class="intro">
+<div *ngIf="category">
+  <div class="intro">
     <div class="intro-row">
       <img class="intro-col image" src="{{category.imagePath}}" alt="cake">
       <div class="intro-col text">
@@ -8,9 +11,9 @@
         <p class="text">{{category.detailedText}}</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="catalog">
+  <div class="catalog">
     <div class="catalog-row" *ngIf="category.items">
       <div class="catalog-col" *ngFor="let product of category.items">
         <img class="image"
@@ -21,9 +24,8 @@
         <p class="product-details">{{product.weight}} / {{product.price}} грн</p>
       </div>
     </div>
-  </section>
-
-  <app-footer></app-footer>
-
+  </div>
 </div>
+
+<app-footer></app-footer>
 

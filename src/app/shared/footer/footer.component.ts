@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {CategoriesService} from '../../catalog-list/categories.service';
+import {CategoriesEnum} from '../constants/categories.constant';
 
 @Component({
   selector: 'app-footer',
@@ -9,20 +9,19 @@ import {CategoriesService} from '../../catalog-list/categories.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private router: Router,
-              private productService: CategoriesService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  changeSelectedProduct(selectedItem: string): void {
-    this.productService.selectedCategory.next(selectedItem);
+  changePath(selectedCategory: CategoriesEnum): void {
+    this.router.navigate(['/catalog'], {fragment: selectedCategory});
   }
 
-  changePath(link: string): void {
-    this.changeSelectedProduct(link);
-    this.router.navigate(['catalog']);
+  public get categoriesEnum(): typeof CategoriesEnum {
+    return CategoriesEnum;
   }
+
 
 }
