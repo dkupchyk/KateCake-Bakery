@@ -10,22 +10,27 @@
         <a class="col link"
            routerLink="/catalog"
            fragment="{{categoriesEnum.Cakes}}"
+           (click)="changeState()"
            routerLinkActive="active">Торты</a>
         <a class="col link"
            routerLink="/catalog"
            fragment="{{categoriesEnum.Cheesecakes}}"
+           (click)="changeState()"
            routerLinkActive="active">Чизкейки</a>
         <a class="col link"
            routerLink="/catalog"
            fragment="{{categoriesEnum.Cupcakes}}"
+           (click)="changeState()"
            routerLinkActive="active">Капкейки</a>
         <a class="col link"
            routerLink="/catalog"
            fragment="{{categoriesEnum.Macarons}}"
+           (click)="changeState()"
            routerLinkActive="active">Макароны</a>
         <a class="col link"
            routerLink="/catalog"
            fragment="{{categoriesEnum.Eskimo}}"
+           (click)="changeState()"
            routerLinkActive="active">Эскимо-кейкпопсы</a>
       </div>
       <app-socials-widget class="overlay"></app-socials-widget>

@@ -36,6 +36,7 @@ export class CatalogListComponent implements OnInit, OnDestroy {
         categoryData => {
           this.category = categoryData;
           this.isLoading = false;
+          console.log(this.isLoading);
         });
     }));
   }
