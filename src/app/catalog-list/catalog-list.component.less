@@ -1,9 +1,14 @@
 @import '../shared/variables.less';
 
-.loading-text {
-  color: @primary-peach;
-  text-align: center;
-  margin: 10% 0;
+.loading-div {
+  height: 50vh;
+  justify-content: center;
+
+  .loading-text {
+    color: @primary-peach;
+    text-align: center;
+    margin: 10% 0;
+  }
 }
 
 .catalog-row,
@@ -50,6 +55,17 @@
 }
 
 @media only screen and (max-width: 770px) {
+  .loading-div {
+    height: 50vh;
+    justify-content: center;
+
+    .loading-text {
+      color: @primary-peach;
+      text-align: center;
+      font-size: 10vw;
+      margin: 10% 0;
+    }
+  }
   .catalog-row,
   .intro-row {
     display: block;
@@ -61,8 +77,9 @@
     }
 
     .text {
-      width: 100%;
+      width: 85vw;
       font-size: 6vw;
+      margin: auto;
 
       .main-heading {
         font-size: 8vw;
