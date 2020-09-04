@@ -23,4 +23,11 @@ export class HeaderService {
     });
     this.headerItemsSubject.next(this.headerItems);
   }
+
+  unactivateAll(): void {
+    this.headerItems.forEach(item => {
+       item.activated = false;
+    });
+    this.headerItemsSubject.next(this.headerItems);
+  }
 }

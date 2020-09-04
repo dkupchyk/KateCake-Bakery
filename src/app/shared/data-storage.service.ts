@@ -4,6 +4,7 @@ import {Category} from './models/category.model';
 import {map, take} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {CategoriesEnum} from './constants/categories.constant';
+import {Product} from './models/product.model';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -12,7 +13,7 @@ export class DataStorageService {
   constructor(private http: HttpClient) {
   }
 
-  fetchData(categoryName: CategoriesEnum): Observable<Category> {
+  fetchCatalogData(categoryName: CategoriesEnum): Observable<Category> {
     return this.http
       .get<Category>(
         'https://katecake-161ba.firebaseio.com/categories/' + categoryName + '.json'
@@ -21,6 +22,18 @@ export class DataStorageService {
         take(1),
         map(category => {
             return category;
+          }
+        )
+      );
+  }
+
+  fetchProductData(categoryName: CategoriesEnum, productId: number): Observable<Product> {
+    return this.http
+      .get<Product>('https://katecake-161ba.firebaseio.com/categories/' + categoryName + '/items/' + productId + '.json')
+      .pipe(
+        take(1),
+        map(product => {
+            return product;
           }
         )
       );

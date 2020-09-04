@@ -5,6 +5,7 @@ import {DataStorageService} from '../data-storage.service';
 import {HeaderService} from './header.service';
 import {HeaderItemInterface} from '../models/header-item.interface';
 import {Subscription} from 'rxjs';
+import {query} from '@angular/animations';
 
 @Component({
   selector: 'app-header',
@@ -38,10 +39,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.screenWidth = event.target.innerWidth;
   }
 
-  changePath(fragment: CategoriesEnum): void {
-    this.headerService.changeActivatedItem(fragment);
+  changePath(categoryName: CategoriesEnum): void {
+    this.headerService.changeActivatedItem(categoryName);
     this.dataStorage.isLoading.next(true);
-    this.router.navigate(['/catalog'], {fragment: fragment.toString(), preserveFragment: false});
+    this.router.navigate(['/catalog'], {
+      queryParams: {type: categoryName.toString()}
+    });
+  }
+
+  unactivateAllLinks(): void {
+    this.headerService.unactivateAll();
   }
 
 }

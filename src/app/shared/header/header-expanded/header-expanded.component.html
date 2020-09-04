@@ -16,7 +16,7 @@
        (click)="headerComponent.changePath(headerComponent.headerItemArray[2].fragment)">
       {{headerComponent.headerItemArray[2].title}}</a>
 
-    <div class="logo">
+    <div class="logo" (click)="headerComponent.unactivateAllLinks()">
       <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
       <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>

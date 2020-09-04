@@ -15,7 +15,6 @@ import {HeaderService} from '../shared/header/header.service';
   styleUrls: ['./catalog-list.component.less']
 })
 export class CatalogListComponent implements OnInit, OnDestroy {
-
   categoryName: CategoriesEnum;
   category: Category;
   subscription: Subscription[] = [];
@@ -46,22 +45,24 @@ export class CatalogListComponent implements OnInit, OnDestroy {
   }
 
   subscribeToFragment(): void {
-    this.subscription.push(this.route.fragment.subscribe(fragment => {
-      this.categoryName = fragment as CategoriesEnum;
+    this.subscription.push(this.route.queryParams.subscribe(param => {
+      this.categoryName = param['type'] as CategoriesEnum;
       this.headerService.changeActivatedItem(this.categoryName);
 
-      this.dataStorage.fetchData(this.categoryName).pipe(take(1)).subscribe(
+      this.dataStorage.fetchCatalogData(this.categoryName).pipe(take(1)).subscribe(
         categoryData => {
           this.category = categoryData;
           this.isLoading = false;
         });
-
     }));
   }
 
-  changeSelectedProduct(product: Product): void {
-    this.productService.selectedProduct.next(product);
-    this.router.navigate(['products'], {relativeTo: this.route});
+  changeSelectedProduct(productId: number): void {
+    this.productService.selectedProduct.next(productId);
+    this.router.navigate(['/products'], {
+      queryParams: { type: this.categoryName.toString(), id: productId
+      }
+    });
   }
 
 }

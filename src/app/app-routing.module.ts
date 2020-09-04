@@ -17,11 +17,18 @@ const appRoutes: Routes = [
   {
     path: 'catalog',
     component: CatalogListComponent,
-    children: [{
-      path: 'products',
-      component: ProductDetailedComponent
-    }]
-  }
+  },
+  {
+    path: 'products',
+    component: ProductDetailedComponent
+  },
+  // {
+  //   path: 'catalog',
+  //   component: CatalogListComponent,
+  //   children: [
+  //     {path: 'product', component: ProductDetailedComponent},
+  //   ]
+  // },
 ];
 
 @NgModule({

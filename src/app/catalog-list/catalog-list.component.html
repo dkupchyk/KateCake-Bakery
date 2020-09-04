@@ -19,7 +19,7 @@
         <img class="image"
              src="{{product.mainPhoto}}"
              alt="cake"
-             (click)="changeSelectedProduct(product)">
+             (click)="changeSelectedProduct(product.id)">
         <p class="product-name">{{product.name}}</p>
         <p class="product-details">{{product.weight}} / {{product.price}} грн</p>
       </div>
