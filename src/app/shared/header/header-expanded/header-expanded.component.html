@@ -2,22 +2,19 @@
   <div class="header-list">
 
     <a class="link"
-       (click)="headerComponent.changePath()"
-       routerLink="/catalog"
-       fragment="{{headerComponent.categoriesEnum.Cakes}}"
-       routerLinkActive="active">Торты</a>
+       [ngClass]="{'active' : headerComponent.headerItemArray[0].activated}"
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[0].fragment)">
+      {{headerComponent.headerItemArray[0].title}}</a>
 
     <a class="link"
-       (click)="headerComponent.changePath()"
-       routerLink="/catalog"
-       fragment="{{headerComponent.categoriesEnum.Cheesecakes}}"
-       routerLinkActive="active">Чизкейки</a>
+       [ngClass]="{'active' : headerComponent.headerItemArray[1].activated}"
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[1].fragment)">
+      {{headerComponent.headerItemArray[1].title}}</a>
 
     <a class="link"
-       routerLink="/catalog"
-       fragment="{{headerComponent.categoriesEnum.Cupcakes}}"
-       (click)="headerComponent.changePath()"
-       routerLinkActive="active">Капкейки</a>
+       [ngClass]="{'active' : headerComponent.headerItemArray[2].activated}"
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[2].fragment)">
+      {{headerComponent.headerItemArray[2].title}}</a>
 
     <div class="logo">
       <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
@@ -25,16 +22,14 @@
     </div>
 
     <a class="link"
-       routerLink="/catalog"
-       fragment="{{headerComponent.categoriesEnum.Macarons}}"
-       (click)="headerComponent.changePath()"
-       routerLinkActive="active">Макароны</a>
+       [ngClass]="{'active' : headerComponent.headerItemArray[3].activated}"
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[3].fragment)">
+      {{headerComponent.headerItemArray[3].title}}</a>
 
     <a class="link"
-       routerLink="/catalog"
-       fragment="{{headerComponent.categoriesEnum.Eskimo}}"
-       (click)="headerComponent.changePath()"
-       routerLinkActive="active">Эскимо-кейкпопсы</a>
+       [ngClass]="{'active' : headerComponent.headerItemArray[4].activated}"
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[4].fragment)">
+      {{headerComponent.headerItemArray[4].title}}</a>
 
   </div>
 </div>

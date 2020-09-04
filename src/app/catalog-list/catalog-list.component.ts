@@ -7,6 +7,7 @@ import {CategoriesEnum} from '../shared/constants/categories.constant';
 import {Category} from '../shared/models/category.model';
 import {take} from 'rxjs/operators';
 import {Subscription} from 'rxjs';
+import {HeaderService} from '../shared/header/header.service';
 
 @Component({
   selector: 'app-catalog-list',
@@ -20,25 +21,16 @@ export class CatalogListComponent implements OnInit, OnDestroy {
   subscription: Subscription[] = [];
   isLoading = true;
 
-  constructor(private productService: ProductsService,
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private productService: ProductsService,
               private dataStorage: DataStorageService,
-              private router: Router,
-              private route: ActivatedRoute) {
+              private headerService: HeaderService) {
   }
 
   ngOnInit(): void {
-    this.subscription.push(this.dataStorage.isLoading.subscribe(value => {
-      this.isLoading = value;
-    }));
-    this.subscription.push(this.route.fragment.subscribe(fragment => {
-      this.categoryName = fragment as CategoriesEnum;
-      this.dataStorage.fetchData(this.categoryName).pipe(take(1)).subscribe(
-        categoryData => {
-          this.category = categoryData;
-          this.isLoading = false;
-          console.log(this.isLoading);
-        });
-    }));
+    this.subscribeToLoading();
+    this.subscribeToFragment();
   }
 
   ngOnDestroy(): void {
@@ -47,9 +39,29 @@ export class CatalogListComponent implements OnInit, OnDestroy {
     });
   }
 
+  subscribeToLoading(): void {
+    this.subscription.push(this.dataStorage.isLoading.subscribe(value => {
+      this.isLoading = value;
+    }));
+  }
+
+  subscribeToFragment(): void {
+    this.subscription.push(this.route.fragment.subscribe(fragment => {
+      this.categoryName = fragment as CategoriesEnum;
+      this.headerService.changeActivatedItem(this.categoryName);
+
+      this.dataStorage.fetchData(this.categoryName).pipe(take(1)).subscribe(
+        categoryData => {
+          this.category = categoryData;
+          this.isLoading = false;
+        });
+
+    }));
+  }
+
   changeSelectedProduct(product: Product): void {
     this.productService.selectedProduct.next(product);
-    this.router.navigate(['product']);
+    this.router.navigate(['products'], {relativeTo: this.route});
   }
 
 }

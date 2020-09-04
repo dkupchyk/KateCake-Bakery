@@ -1,5 +1,6 @@
 @import '../../variables.less';
 
+
 .header-expanded {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3vw;
@@ -18,12 +19,15 @@
       color: @primary-black;
       font-weight: 500;
       cursor: pointer;
+    }
 
-      &:hover,
-      &:active,
-      &:focus {
-        color: @primary-peach;
-      }
+    & .active {
+      color: @primary-peach;
+    }
+
+    &:hover,
+    &:focus {
+      color: @primary-peach;
     }
 
     .logo {

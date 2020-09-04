@@ -3,35 +3,12 @@
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <div class="overlay-content">
 
-      <a class="link"
-         routerLink="/catalog"
-         fragment="{{headerComponent.categoriesEnum.Cakes}}"
-         (click)="changePath()"
-         routerLinkActive="active">Торты</a>
-
-      <a class="link"
-         routerLink="/catalog"
-         fragment="{{headerComponent.categoriesEnum.Cheesecakes}}"
-         (click)="changePath()"
-         routerLinkActive="active">Чизкейки</a>
-
-      <a class="link"
-         routerLink="/catalog"
-         fragment="{{headerComponent.categoriesEnum.Cupcakes}}"
-         (click)="changePath()"
-         routerLinkActive="active">Капкейки</a>
-
-      <a class="link"
-         routerLink="/catalog"
-         fragment="{{headerComponent.categoriesEnum.Macarons}}"
-         (click)="changePath()"
-         routerLinkActive="active">Макароны</a>
-
-      <a class="link"
-         routerLink="/catalog"
-         fragment="{{headerComponent.categoriesEnum.Eskimo}}"
-         (click)="changePath()"
-         routerLinkActive="active">Эскимо-кейкпопсы</a>
+      <a *ngFor="let headerItem of headerComponent.headerItemArray"
+        class="link"
+         [ngClass]="{'active' : headerItem.activated}"
+         (click)="changePath(headerItem.fragment)">
+        {{headerItem.title}}
+      </a>
 
     </div>
   </div>

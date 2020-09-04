@@ -8,6 +8,7 @@ import {DataStorageService} from './data-storage.service';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderShrinkedComponent } from './header/header-shrinked/header-shrinked.component';
 import { HeaderExpandedComponent } from './header/header-expanded/header-expanded.component';
+import {HeaderService} from './header/header.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { HeaderExpandedComponent } from './header/header-expanded/header-expande
     SocialsWidgetComponent,
     HttpClientModule
   ],
-  providers: [DataStorageService]
+  providers: [DataStorageService, HeaderService]
 })
 export class SharedModule {
 }
