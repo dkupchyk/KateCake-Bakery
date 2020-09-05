@@ -1,8 +1,8 @@
-<div *ngIf="isLoading">
+<div class="loading-div" *ngIf="isLoading">
   <h3 class="loading-text">Loading...</h3>
 </div>
 
-<div  *ngIf="!isLoading" class="product-detailed row">
+<div *ngIf="!isLoading" class="product-detailed row">
 
   <div class="col photos">
     <img class="image main-image" src="{{product.mainPhoto}}" alt="main-photo">
