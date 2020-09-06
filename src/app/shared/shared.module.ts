@@ -10,6 +10,7 @@ import {AppRoutingModule} from '../app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { SocialsWidgetComponent } from './socials-widget/socials-widget.component';
 import {DataStorageService} from './data-storage.service';
+import { LoadingWidgetComponent } from './loading-widget/loading-widget.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {DataStorageService} from './data-storage.service';
     FooterComponent,
     SocialsWidgetComponent,
     HeaderShrunkComponent,
-    HeaderExpandedComponent
+    HeaderExpandedComponent,
+    LoadingWidgetComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import {DataStorageService} from './data-storage.service';
     HeaderComponent,
     FooterComponent,
     SocialsWidgetComponent,
-    HttpClientModule
+    HttpClientModule,
+    LoadingWidgetComponent
   ],
   providers: [DataStorageService, HeaderService]
 })

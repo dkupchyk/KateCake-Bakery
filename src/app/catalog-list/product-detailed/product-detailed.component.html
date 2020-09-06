@@ -1,6 +1,4 @@
-<div class="loading-div" *ngIf="isLoading">
-  <h3 class="loading-text">Loading...</h3>
-</div>
+<app-loading-widget *ngIf="isLoading"></app-loading-widget>
 
 <div *ngIf="!isLoading" class="product-detailed row">
 
