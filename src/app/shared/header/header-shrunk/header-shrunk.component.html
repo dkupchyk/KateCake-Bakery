@@ -4,7 +4,7 @@
     <div class="overlay-content">
 
       <a *ngFor="let headerItem of headerComponent.headerItemArray"
-        class="link"
+         class="link"
          [ngClass]="{'active' : headerItem.activated}"
          (click)="changePath(headerItem.enumParam)">
         {{headerItem.title}}

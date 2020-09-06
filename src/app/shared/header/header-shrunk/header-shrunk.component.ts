@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component} from '@angular/core'
+  ;
 import {HeaderComponent} from '../header.component';
 import {CategoriesEnum} from '../../constants/categories.constant';
 
@@ -20,8 +21,8 @@ export class HeaderShrunkComponent {
     (document.getElementById('header-shrunk') as HTMLElement).style.width = '0';
   }
 
-  changePath(fragment: CategoriesEnum): void {
+  changePath(category: CategoriesEnum): void {
     this.closeNav();
-    this.headerComponent.changePath(fragment);
+    this.headerComponent.changePath(category);
   }
 }

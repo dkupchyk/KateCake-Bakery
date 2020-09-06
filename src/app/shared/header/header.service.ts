@@ -20,7 +20,7 @@ export class HeaderService {
 
   unactivateAll(): void {
     this.headerItems.forEach(item => {
-       item.activated = false;
+      item.activated = false;
     });
     this.headerItemsSubject.next(this.headerItems);
   }

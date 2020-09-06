@@ -1,6 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {ProductDetailedComponent} from './catalog-list/product-detailed/product-detailed.component';
 
 const appRoutes: Routes = [
   {

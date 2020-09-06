@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
 import {HeaderComponent} from './header/header.component';
@@ -9,7 +10,7 @@ import {FooterComponent} from './footer/footer.component';
 import {SocialsWidgetComponent} from './socials-widget/socials-widget.component';
 import {DataStorageService} from './data-storage.service';
 import {LoadingWidgetComponent} from './loading-widget/loading-widget.component';
-import {CommonModule} from '@angular/common';
+
 
 @NgModule({
   declarations: [

@@ -1,10 +1,11 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+
 import {CategoriesEnum} from '../constants/categories.constant';
 import {DataStorageService} from '../data-storage.service';
 import {HeaderService} from './header.service';
 import {HeaderItemInterface} from '../models/header-item.interface';
-import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -49,5 +50,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   unactivateAllLinks(): void {
     this.headerService.unactivateAll();
+    this.router.navigate(['/home']);
   }
 }

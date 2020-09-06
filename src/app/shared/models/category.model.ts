@@ -8,6 +8,6 @@ export class Category {
               public detailedText: string,
               public enumEquivalent: string,
               public items: Product[]
-              ) {
+  ) {
   }
 }
