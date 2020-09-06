@@ -1,16 +1,32 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Category} from './models/category.model';
 import {map, take} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
+
 import {CategoriesEnum} from './constants/categories.constant';
 import {Product} from './models/product.model';
+import {Review} from './models/review.model';
+import {Category} from './models/category.model';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
   isLoading = new BehaviorSubject<boolean>(true);
 
   constructor(private http: HttpClient) {
+  }
+
+  fetchReviewsData(): Observable<Review[]> {
+    return this.http
+      .get<Review[]>(
+        'https://katecake-161ba.firebaseio.com/reviews.json'
+      )
+      .pipe(
+        take(1),
+        map(reviews => {
+            return reviews;
+          }
+        )
+      );
   }
 
   fetchAllCategoriesData(): Observable<Category[]> {

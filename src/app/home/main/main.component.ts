@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {Router} from '@angular/router';
+
+import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {HeaderService} from '../../shared/header/header.service';
 
@@ -23,5 +24,4 @@ export class MainComponent {
       queryParams: {type: CategoriesEnum.Cakes.toString()}
     });
   }
-
 }

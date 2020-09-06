@@ -1,4 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {take} from 'rxjs/operators';
+
+import {DataStorageService} from '../../shared/data-storage.service';
+import {Review} from '../../shared/models/review.model';
+import {CAROUSEL_OPTIONS} from '../../shared/constants/carousel-settings.constant';
 
 @Component({
   selector: 'app-home-reviews',
@@ -6,58 +13,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./reviews.component.less']
 })
 export class ReviewsComponent {
-  reviews = [
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    },
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    },
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    },
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    },
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    },
-    {
-      author: '@author',
-      text: 'Является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.'
-    }
-  ];
+  @Input() reviews: Review[];
+  optionsForReviewsCarousel = CAROUSEL_OPTIONS;
 
-  optionsForReviewsCarousel: any = {
-    margin: 30,
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: false,
-    smartSpeed: 500,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 700,
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 1
-      },
-      740: {
-        items: 2
-      },
-      940: {
-        items: 2
-      }
-    },
-  };
+  constructor() {
+  }
 }
