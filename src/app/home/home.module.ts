@@ -1,8 +1,6 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
 
-import {AppRoutingModule} from '../app-routing.module';
 import {HomeComponent} from './home.component';
 import {SharedModule} from '../shared/shared.module';
 import {MainComponent} from './main/main.component';
@@ -11,6 +9,7 @@ import {AssortmentComponent} from './assortment/assortment.component';
 import {ReviewsComponent} from './reviews/reviews.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {SocialsComponent} from './socials/socials.component';
+import {HomeRoutingModule} from './home-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +21,10 @@ import {SocialsComponent} from './socials/socials.component';
     SocialsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    HomeRoutingModule,
     SharedModule,
     CarouselModule,
-    BrowserAnimationsModule,
   ],
   providers: []
 })

@@ -1,8 +1,8 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import {AppRoutingModule} from '../app-routing.module';
 import {CatalogListComponent} from './catalog-list.component';
+import {CatalogRoutingModule} from './catalog-routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {ProductDetailedComponent} from './product-detailed/product-detailed.component';
 
@@ -12,8 +12,8 @@ import {ProductDetailedComponent} from './product-detailed/product-detailed.comp
     ProductDetailedComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    CatalogRoutingModule,
     SharedModule,
   ],
   exports: [

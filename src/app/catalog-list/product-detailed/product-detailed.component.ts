@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {take} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
+
+import {DataStorageService} from '../../shared/data-storage.service';
 import {Product} from '../../shared/models/product.model';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
-import {take} from 'rxjs/operators';
-import {ActivatedRoute, Router} from '@angular/router';
-import {DataStorageService} from '../../shared/data-storage.service';
-import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-product-detailed',
@@ -52,5 +53,4 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
         });
     }));
   }
-
 }

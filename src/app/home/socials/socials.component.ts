@@ -1,11 +1,12 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {take} from 'rxjs/operators';
+
 import {PHOTOS_EXPANDED, PHOTOS_SHRUNK} from '../../shared/constants/social-carousel-photos.constant';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {HeaderItemInterface} from '../../shared/models/header-item.interface';
-import {Router} from '@angular/router';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {HeaderService} from '../../shared/header/header.service';
-import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-socials',

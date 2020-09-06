@@ -1,35 +1,24 @@
 <div class="header-expanded">
   <div class="header-list">
 
-    <a class="link"
-       [ngClass]="{'active' : headerComponent.headerItemArray[0].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[0].enumParam)">
-      {{headerComponent.headerItemArray[0].title}}</a>
-
-    <a class="link"
-       [ngClass]="{'active' : headerComponent.headerItemArray[1].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[1].enumParam)">
-      {{headerComponent.headerItemArray[1].title}}</a>
-
-    <a class="link"
-       [ngClass]="{'active' : headerComponent.headerItemArray[2].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[2].enumParam)">
-      {{headerComponent.headerItemArray[2].title}}</a>
+    <a *ngFor="let headerItem of headerItemArrayRight"
+       class="link"
+       [ngClass]="{'active' : headerItem.activated}"
+       (click)="headerComponent.changePath(headerItem.enumParam)">
+      {{headerItem.title}}
+    </a>
 
     <div class="logo" (click)="headerComponent.unactivateAllLinks()">
       <p class="with-love-text" routerLink="/home" routerLinkActive="active">with love</p>
       <p class="kate-cake-text" routerLink="/home" routerLinkActive="active">Kate Cake</p>
     </div>
 
-    <a class="link"
-       [ngClass]="{'active' : headerComponent.headerItemArray[3].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[3].enumParam)">
-      {{headerComponent.headerItemArray[3].title}}</a>
-
-    <a class="link"
-       [ngClass]="{'active' : headerComponent.headerItemArray[4].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[4].enumParam)">
-      {{headerComponent.headerItemArray[4].title}}</a>
+    <a *ngFor="let headerItem of headerItemArrayLeft"
+       class="link"
+       [ngClass]="{'active' : headerItem.activated}"
+       (click)="headerComponent.changePath(headerItem.enumParam)">
+      {{headerItem.title}}
+    </a>
 
   </div>
 </div>

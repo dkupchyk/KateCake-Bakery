@@ -1,7 +1,5 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {HomeComponent} from './home/home.component';
-import {CatalogListComponent} from './catalog-list/catalog-list.component';
 import {ProductDetailedComponent} from './catalog-list/product-detailed/product-detailed.component';
 
 const appRoutes: Routes = [
@@ -12,23 +10,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'catalog',
-    component: CatalogListComponent,
-  },
-  {
-    path: 'products',
-    component: ProductDetailedComponent
-  },
-  // {
-  //   path: 'catalog',
-  //   component: CatalogListComponent,
-  //   children: [
-  //     {path: 'product', component: ProductDetailedComponent},
-  //   ]
-  // },
+    loadChildren: () => import('./catalog-list/catalog.module').then(m => m.CatalogModule)
+  }
 ];
 
 @NgModule({

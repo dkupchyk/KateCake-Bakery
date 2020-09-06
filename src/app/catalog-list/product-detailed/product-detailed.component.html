@@ -1,7 +1,6 @@
 <app-loading-widget *ngIf="isLoading"></app-loading-widget>
 
 <div *ngIf="!isLoading" class="product-detailed row">
-
   <div class="col photos">
     <img class="image main-image" src="{{product.mainPhoto}}" alt="main-photo">
     <div class="additional-photos">
@@ -22,7 +21,6 @@
     </div>
     <button class="button order-button">Заказать</button>
   </div>
-
 </div>
 
 <app-footer></app-footer>
