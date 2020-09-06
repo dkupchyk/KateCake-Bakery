@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {take} from 'rxjs/operators';
 
@@ -15,12 +14,10 @@ import {DataStorageService} from '../shared/data-storage.service';
 export class HomeComponent implements OnInit, OnDestroy {
   reviews: Review[] = [];
   assortmentCategories: Category[] = [];
+  subscription: Subscription;
   isLoading = true;
-  subscription: Subscription[] = [];
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private dataStorage: DataStorageService) {
+  constructor(private dataStorage: DataStorageService) {
   }
 
   ngOnInit(): void {
@@ -30,15 +27,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.forEach(subscription => {
-      subscription.unsubscribe();
-    });
+    this.subscription.unsubscribe();
   }
 
   subscribeToLoading(): void {
-    this.subscription.push(this.dataStorage.isLoading.subscribe(value => {
+    this.subscription = this.dataStorage.isLoading.subscribe(value => {
       this.isLoading = value;
-    }));
+    });
   }
 
   subscribeToAssortmentData(): void {

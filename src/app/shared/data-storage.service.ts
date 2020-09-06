@@ -11,6 +11,7 @@ import {Category} from './models/category.model';
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
   isLoading = new BehaviorSubject<boolean>(true);
+  isCatalogChanged = new BehaviorSubject<boolean>(null);
 
   constructor(private http: HttpClient) {
   }

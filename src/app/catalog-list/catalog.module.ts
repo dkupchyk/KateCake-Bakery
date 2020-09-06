@@ -1,10 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+
 import {AppRoutingModule} from '../app-routing.module';
 import {CatalogListComponent} from './catalog-list.component';
 import {SharedModule} from '../shared/shared.module';
 import {ProductDetailedComponent} from './product-detailed/product-detailed.component';
-import {ProductsService} from './product-detailed/products.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import {ProductsService} from './product-detailed/products.service';
     CatalogListComponent,
     ProductDetailedComponent
   ],
-  providers: [ProductsService],
+  providers: [],
 })
 export class CatalogModule {
 }

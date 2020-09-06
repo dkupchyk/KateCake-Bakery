@@ -1,4 +1,11 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {PHOTOS_EXPANDED, PHOTOS_SHRUNK} from '../../shared/constants/social-carousel-photos.constant';
+import {CategoriesEnum} from '../../shared/constants/categories.constant';
+import {HeaderItemInterface} from '../../shared/models/header-item.interface';
+import {Router} from '@angular/router';
+import {DataStorageService} from '../../shared/data-storage.service';
+import {HeaderService} from '../../shared/header/header.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-socials',
@@ -8,22 +15,37 @@ import {Component, HostListener, OnInit} from '@angular/core';
 export class SocialsComponent implements OnInit {
   screenWidth: number;
   photosRow = [];
+  headerItemArray: HeaderItemInterface[] = [];
+  headerItemArrayRight: HeaderItemInterface[] = [];
+  headerItemArrayLeft: HeaderItemInterface[] = [];
+
+  constructor(private router: Router,
+              private dataStorage: DataStorageService,
+              private headerService: HeaderService) {
+  }
 
   ngOnInit(): void {
+    this.initializePhotos();
+    this.initializeHeaderItems();
+  }
+
+  initializePhotos(): void {
     this.screenWidth = window.innerWidth;
     this.screenWidth > 770
-      ? this.photosRow = [
-        'assets/images/main/instagram-row/1.jpg',
-        'assets/images/main/instagram-row/2.jpg',
-        'assets/images/main/instagram-row/3.jpg',
-        'assets/images/main/instagram-row/1.jpg',
-        'assets/images/main/instagram-row/2.jpg',
-        'assets/images/main/instagram-row/3.jpg']
-      : this.photosRow = [
-        'assets/images/main/instagram-row/1.jpg',
-        'assets/images/main/instagram-row/2.jpg',
-        'assets/images/main/instagram-row/3.jpg'
-      ];
+      ? this.photosRow = PHOTOS_EXPANDED
+      : this.photosRow = PHOTOS_SHRUNK;
+  }
+
+  initializeHeaderItems(): void {
+    this.headerService.headerItemsSubject
+      .pipe(take(1))
+      .subscribe(
+        header => {
+          this.headerItemArray = header;
+        });
+
+    this.headerItemArrayRight = this.headerItemArray.slice(0, 3);
+    this.headerItemArrayLeft = this.headerItemArray.slice(3, 5);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -31,4 +53,11 @@ export class SocialsComponent implements OnInit {
     this.screenWidth = event.target.innerWidth;
   }
 
+  changePath(categoryId: CategoriesEnum): void {
+    this.headerService.changeActivatedItem(categoryId);
+    this.dataStorage.isLoading.next(true);
+    this.router.navigate(['/catalog'], {
+      queryParams: {type: categoryId.toString()}
+    });
+  }
 }

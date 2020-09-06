@@ -8,9 +8,6 @@ import {Component, HostListener, OnInit} from '@angular/core';
 export class SocialsWidgetComponent implements OnInit {
   screenWidth: number;
 
-  constructor() {
-  }
-
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
   }
@@ -19,5 +16,4 @@ export class SocialsWidgetComponent implements OnInit {
   onResize(event): void {
     this.screenWidth = event.target.innerWidth;
   }
-
 }

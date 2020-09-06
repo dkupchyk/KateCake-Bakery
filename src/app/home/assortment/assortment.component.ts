@@ -1,6 +1,5 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
-import {Subscription} from 'rxjs';
 
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {Category} from '../../shared/models/category.model';
@@ -10,7 +9,8 @@ import {HeaderService} from '../../shared/header/header.service';
 @Component({
   selector: 'app-home-assortment',
   templateUrl: './assortment.component.html',
-  styleUrls: ['./assortment.component.less']
+  styleUrls: ['./assortment.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AssortmentComponent {
   @Input() categories: Category[];

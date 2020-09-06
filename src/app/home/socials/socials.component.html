@@ -11,17 +11,33 @@
   <app-socials-widget class="overlay"></app-socials-widget>
 
   <div class="socials-row">
-    <div class="header-list">
-      <a *ngIf="screenWidth > 770" class="link" routerLink="/menu" routerLinkActive="active">Торты</a>
-      <a *ngIf="screenWidth > 770" class="link" routerLink="/menu" routerLinkActive="active">Чизкейки</a>
-      <a *ngIf="screenWidth > 770" class="link" routerLink="/menu" routerLinkActive="active">Капкейки</a>
+    <div class="header-list" *ngIf="screenWidth > 770">
+
+      <a *ngFor="let headerItem of headerItemArrayRight"
+         class="link"
+         (click)="changePath(headerItem.enumParam)">
+        {{headerItem.title}}
+      </a>
+
       <div class="logo">
         <p class="with-love-text">with love</p>
         <p class="kate-cake-text">Kate Cake</p>
       </div>
-      <a *ngIf="screenWidth > 770" class="link" routerLink="/menu" routerLinkActive="active">Макароны</a>
-      <a *ngIf="screenWidth > 770" class="link" routerLink="/menu" routerLinkActive="active">Эскимо-кейкпопсы</a>
-    </div>
-  </div>
 
+      <a *ngFor="let headerItem of headerItemArrayLeft"
+         class="link"
+         (click)="changePath(headerItem.enumParam)">
+        {{headerItem.title}}
+      </a>
+
+    </div>
+
+    <div class="header-list" *ngIf="screenWidth <= 770">
+      <div class="logo">
+        <p class="with-love-text">with love</p>
+        <p class="kate-cake-text">Kate Cake</p>
+      </div>
+    </div>
+
+  </div>
 </div>

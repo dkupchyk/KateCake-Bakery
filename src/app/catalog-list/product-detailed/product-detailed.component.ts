@@ -1,11 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Product} from '../../shared/models/product.model';
-import {ProductsService} from './products.service';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {take} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DataStorageService} from '../../shared/data-storage.service';
-import {HeaderService} from '../../shared/header/header.service';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -22,7 +20,6 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private productService: ProductsService,
               private dataStorage: DataStorageService) {
   }
 
@@ -52,7 +49,6 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
         productData => {
           this.product = productData;
           this.isLoading = false;
-          console.log(this.product);
         });
     }));
   }

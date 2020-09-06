@@ -3,26 +3,25 @@ import {HeaderComponent} from '../header.component';
 import {CategoriesEnum} from '../../constants/categories.constant';
 
 @Component({
-  selector: 'app-header-shrinked',
-  templateUrl: './header-shrinked.component.html',
-  styleUrls: ['./header-shrinked.component.less']
+  selector: 'app-header-shrunk',
+  templateUrl: './header-shrunk.component.html',
+  styleUrls: ['./header-shrunk.component.less']
 })
-export class HeaderShrinkedComponent {
+export class HeaderShrunkComponent {
 
   constructor(public headerComponent: HeaderComponent) {
   }
 
   openNav(): void {
-    (document.getElementById('header-shrinked') as HTMLElement).style.width = '100%';
+    (document.getElementById('header-shrunk') as HTMLElement).style.width = '100%';
   }
 
   closeNav(): void {
-    (document.getElementById('header-shrinked') as HTMLElement).style.width = '0';
+    (document.getElementById('header-shrunk') as HTMLElement).style.width = '0';
   }
 
   changePath(fragment: CategoriesEnum): void {
     this.closeNav();
     this.headerComponent.changePath(fragment);
   }
-
 }

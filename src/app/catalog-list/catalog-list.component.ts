@@ -1,12 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Product} from '../shared/models/product.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ProductsService} from './product-detailed/products.service';
+import {take} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
+
 import {DataStorageService} from '../shared/data-storage.service';
 import {CategoriesEnum} from '../shared/constants/categories.constant';
 import {Category} from '../shared/models/category.model';
-import {take} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
 import {HeaderService} from '../shared/header/header.service';
 
 @Component({
@@ -22,14 +21,14 @@ export class CatalogListComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private productService: ProductsService,
               private dataStorage: DataStorageService,
               private headerService: HeaderService) {
   }
 
   ngOnInit(): void {
+    this.dataStorage.isCatalogChanged.next(true);
     this.subscribeToLoading();
-    this.subscribeToFragment();
+    this.subscribeToHeader();
   }
 
   ngOnDestroy(): void {
@@ -44,25 +43,42 @@ export class CatalogListComponent implements OnInit, OnDestroy {
     }));
   }
 
-  subscribeToFragment(): void {
-    this.subscription.push(this.route.queryParams.subscribe(param => {
-      this.categoryName = param['type'] as CategoriesEnum;
-      this.headerService.changeActivatedItem(this.categoryName);
+  subscribeToHeader(): void {
+    this.subscription.push(this.dataStorage.isCatalogChanged
+      .subscribe(value => {
+          if (value) {
+            this.isLoading = true;
+            this.getCatalogByQueryParams();
+          }
+        }
+      ));
+  }
 
-      this.dataStorage.fetchCatalogData(this.categoryName).pipe(take(1)).subscribe(
+  getCatalogByQueryParams(): void {
+    this.subscription.push(this.route.queryParams
+      .subscribe(param => {
+        this.categoryName = param['type'] as CategoriesEnum;
+        this.headerService.changeActivatedItem(this.categoryName);
+        this.getCategoryData(this.categoryName);
+      }));
+  }
+
+  getCategoryData(categoryName: CategoriesEnum): void {
+    this.dataStorage.fetchCatalogData(categoryName)
+      .pipe(take(1))
+      .subscribe(
         categoryData => {
           this.category = categoryData;
+          this.dataStorage.isCatalogChanged.next(false);
           this.isLoading = false;
         });
-    }));
   }
 
   changeSelectedProduct(productId: number): void {
-    this.productService.selectedProduct.next(productId);
     this.router.navigate(['/products'], {
-      queryParams: { type: this.categoryName.toString(), id: productId
+      queryParams: {
+        type: this.categoryName.toString(), id: productId
       }
     });
   }
-
 }

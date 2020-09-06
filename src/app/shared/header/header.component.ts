@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   changePath(categoryId: CategoriesEnum): void {
     this.headerService.changeActivatedItem(categoryId);
     this.dataStorage.isLoading.next(true);
+    this.dataStorage.isCatalogChanged.next(true);
     this.router.navigate(['/catalog'], {
       queryParams: {type: categoryId.toString()}
     });

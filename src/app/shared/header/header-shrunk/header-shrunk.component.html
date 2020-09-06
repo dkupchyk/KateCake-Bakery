@@ -1,12 +1,12 @@
-<div class="header-shrinked">
-  <div id="header-shrinked" class="header-list overlay">
+<div class="header-shrunk">
+  <div id="header-shrunk" class="header-list overlay">
     <a class="closebtn" (click)="closeNav()">&times;</a>
     <div class="overlay-content">
 
       <a *ngFor="let headerItem of headerComponent.headerItemArray"
         class="link"
          [ngClass]="{'active' : headerItem.activated}"
-         (click)="changePath(headerItem.fragment)">
+         (click)="changePath(headerItem.enumParam)">
         {{headerItem.title}}
       </a>
 
