@@ -3,17 +3,17 @@
 
     <a class="link"
        [ngClass]="{'active' : headerComponent.headerItemArray[0].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[0].fragment)">
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[0].enumParam)">
       {{headerComponent.headerItemArray[0].title}}</a>
 
     <a class="link"
        [ngClass]="{'active' : headerComponent.headerItemArray[1].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[1].fragment)">
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[1].enumParam)">
       {{headerComponent.headerItemArray[1].title}}</a>
 
     <a class="link"
        [ngClass]="{'active' : headerComponent.headerItemArray[2].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[2].fragment)">
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[2].enumParam)">
       {{headerComponent.headerItemArray[2].title}}</a>
 
     <div class="logo" (click)="headerComponent.unactivateAllLinks()">
@@ -23,12 +23,12 @@
 
     <a class="link"
        [ngClass]="{'active' : headerComponent.headerItemArray[3].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[3].fragment)">
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[3].enumParam)">
       {{headerComponent.headerItemArray[3].title}}</a>
 
     <a class="link"
        [ngClass]="{'active' : headerComponent.headerItemArray[4].activated}"
-       (click)="headerComponent.changePath(headerComponent.headerItemArray[4].fragment)">
+       (click)="headerComponent.changePath(headerComponent.headerItemArray[4].enumParam)">
       {{headerComponent.headerItemArray[4].title}}</a>
 
   </div>

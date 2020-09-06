@@ -13,10 +13,24 @@ export class DataStorageService {
   constructor(private http: HttpClient) {
   }
 
-  fetchCatalogData(categoryName: CategoriesEnum): Observable<Category> {
+  fetchAllCategoriesData(): Observable<Category[]> {
+    return this.http
+      .get<Category[]>(
+        'https://katecake-161ba.firebaseio.com/categories.json'
+      )
+      .pipe(
+        take(1),
+        map(categories => {
+            return categories;
+          }
+        )
+      );
+  }
+
+  fetchCatalogData(categoryId: CategoriesEnum): Observable<Category> {
     return this.http
       .get<Category>(
-        'https://katecake-161ba.firebaseio.com/categories/' + categoryName + '.json'
+        'https://katecake-161ba.firebaseio.com/categories/' + categoryId + '.json'
       )
       .pipe(
         take(1),
@@ -27,9 +41,9 @@ export class DataStorageService {
       );
   }
 
-  fetchProductData(categoryName: CategoriesEnum, productId: number): Observable<Product> {
+  fetchProductData(categoryId: CategoriesEnum, productId: number): Observable<Product> {
     return this.http
-      .get<Product>('https://katecake-161ba.firebaseio.com/categories/' + categoryName + '/items/' + productId + '.json')
+      .get<Product>('https://katecake-161ba.firebaseio.com/categories/' + categoryId + '/items/' + productId + '.json')
       .pipe(
         take(1),
         map(product => {

@@ -52,7 +52,6 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
         productData => {
           this.product = productData;
           this.isLoading = false;
-
           console.log(this.product);
         });
     }));

@@ -6,18 +6,17 @@ import {HeaderItemInterface} from '../models/header-item.interface';
 @Injectable()
 export class HeaderService {
   headerItems: HeaderItemInterface[] = [
-    {title: 'Торты', fragment: CategoriesEnum.Cakes, activated: false},
-    {title: 'Чизкейки', fragment: CategoriesEnum.Cheesecakes, activated: false},
-    {title: 'Капкейки', fragment: CategoriesEnum.Cupcakes, activated: false},
-    {title: 'Макароны', fragment: CategoriesEnum.Macarons, activated: false},
-    {title: 'Эскимо-кейкпопсы', fragment: CategoriesEnum.Eskimo, activated: false},
+    {title: 'Торты', enumParam: CategoriesEnum.Cakes, activated: false},
+    {title: 'Чизкейки', enumParam: CategoriesEnum.Cheesecakes, activated: false},
+    {title: 'Капкейки', enumParam: CategoriesEnum.Cupcakes, activated: false},
+    {title: 'Макароны', enumParam: CategoriesEnum.Macarons, activated: false},
+    {title: 'Эскимо-кейкпопсы', enumParam: CategoriesEnum.Eskimo, activated: false},
   ];
-
   headerItemsSubject = new BehaviorSubject<HeaderItemInterface[]>(this.headerItems);
 
-  changeActivatedItem(fragment: CategoriesEnum): void {
+  changeActivatedItem(type: CategoriesEnum): void {
     this.headerItems.forEach(item => {
-      item.fragment === fragment
+      +item.enumParam === +type
         ? item.activated = true
         : item.activated = false;
     });

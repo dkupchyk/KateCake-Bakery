@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {Router} from '@angular/router';
+import {DataStorageService} from '../../shared/data-storage.service';
+import {HeaderService} from '../../shared/header/header.service';
 
 @Component({
   selector: 'app-home-main',
@@ -9,11 +11,17 @@ import {Router} from '@angular/router';
 })
 export class MainComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private dataStorage: DataStorageService,
+              private headerService: HeaderService) {
   }
 
   toCakeCatalog(): void {
-    this.router.navigate(['/catalog'], {fragment: CategoriesEnum.Cakes});
+    this.headerService.changeActivatedItem(CategoriesEnum.Cakes);
+    this.dataStorage.isLoading.next(true);
+    this.router.navigate(['/catalog'], {
+      queryParams: {type: CategoriesEnum.Cakes.toString()}
+    });
   }
 
 }
