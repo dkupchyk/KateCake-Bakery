@@ -1,37 +1,45 @@
 @import '../variables';
 
 .overlay-links {
+  position: relative;
   background-color: @primary-white;
   border-radius: 10px;
   height: 10vh;
-  width: 40vw;
-  justify-content: center;
-
-  & .horizontal-line {
-    margin-top: 3vh;
-    height: 25px;
-  }
+  width: 50vw;
 
   & .social-links {
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
     display: flex;
+    justify-content: center;
 
-    & .social-link {
+    & .container {
       display: flex;
-      width: calc(100% / 3);
       justify-content: center;
-      margin-top: 3.3vh;
+      padding: 2% 3%;
+      //font-size: 1.2vw;
 
-      & .icon {
-        width: 25px;
+      & .social-link {
+        display: flex;
+        justify-content: center;
+        padding-top: 2%;
+
+        & .icon {
+          width: 25px;
+          height: 25px;
+          padding-right: 10%;
+        }
+
+        & .link {
+          color: @primary-black;
+          text-decoration: none;
+        }
       }
 
-      & .link {
-        color: @primary-black;
-        text-decoration: none;
-        margin-left: 10%;
-      }
+      //& .horizontal-line {
+      //  margin-top: 3vh;
+      //  height: 25px;
+      //}
     }
   }
 }

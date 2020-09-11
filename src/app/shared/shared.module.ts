@@ -10,6 +10,7 @@ import {FooterComponent} from './footer/footer.component';
 import {SocialsWidgetComponent} from './socials-widget/socials-widget.component';
 import {DataStorageService} from './data-storage.service';
 import {LoadingWidgetComponent} from './loading-widget/loading-widget.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import {LoadingWidgetComponent} from './loading-widget/loading-widget.component'
     HeaderExpandedComponent,
     LoadingWidgetComponent
   ],
-  imports: [
-    CommonModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule
+    ],
   exports: [
     HeaderComponent,
     FooterComponent,

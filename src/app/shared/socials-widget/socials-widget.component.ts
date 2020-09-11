@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {SOCIAL_LINKS} from '../constants/socials.constant';
 
 @Component({
   selector: 'app-socials-widget',
@@ -15,5 +16,9 @@ export class SocialsWidgetComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event): void {
     this.screenWidth = event.target.innerWidth;
+  }
+
+  getSocialLinks(): {name: string, iconPath: string, link: string}[] {
+    return SOCIAL_LINKS;
   }
 }
