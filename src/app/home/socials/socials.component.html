@@ -1,6 +1,6 @@
 <h3 class="heading">Follow the process</h3>
 
-<div class="socials">
+<section class="socials">
 
   <div class="photos-row">
     <div *ngFor="let photoItem of photosRow; let i = index">
@@ -8,7 +8,9 @@
     </div>
   </div>
 
-  <app-socials-widget class="overlay"></app-socials-widget>
+  <div class="overlay">
+    <app-socials-widget [showMoreInfo]="true"></app-socials-widget>
+  </div>
 
   <div class="socials-row">
     <div class="header-list" *ngIf="screenWidth > 770">
@@ -40,4 +42,4 @@
     </div>
 
   </div>
-</div>
+</section>

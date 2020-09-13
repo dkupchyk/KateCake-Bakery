@@ -11,6 +11,7 @@ import {SocialsWidgetComponent} from './socials-widget/socials-widget.component'
 import {DataStorageService} from './data-storage.service';
 import {LoadingWidgetComponent} from './loading-widget/loading-widget.component';
 import {RouterModule} from '@angular/router';
+import { InfoModalComponent } from './info-modal/info-modal.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {RouterModule} from '@angular/router';
     SocialsWidgetComponent,
     HeaderShrunkComponent,
     HeaderExpandedComponent,
-    LoadingWidgetComponent
+    LoadingWidgetComponent,
+    InfoModalComponent
   ],
     imports: [
         CommonModule,

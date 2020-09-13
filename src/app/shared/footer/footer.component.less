@@ -50,16 +50,15 @@
     justify-content: center;
   }
 
-  & .overlay {
-    position: relative;
-    left: 9vw;
+  & .socials {
+    margin: auto;
+    width: 70%;
   }
 }
 
 @media only screen and (max-width: 770px) {
-
   .footer {
-    background-color: fade(@primary-peach, 30%);
+    overflow-y: hidden;
     padding: 4% 0;
   }
 
@@ -92,6 +91,11 @@
     & .link {
       font-size: 6vw;
       margin: 0 10px 30px 10px;
+    }
+
+    & .socials {
+      margin: auto;
+      width: 80%;
     }
   }
 }

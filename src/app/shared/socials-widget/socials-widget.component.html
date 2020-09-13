@@ -2,17 +2,23 @@
   <div class="social-links">
 
     <div class="container" *ngFor="let socialLink of getSocialLinks(); let i = index">
-      <div class="social-link" >
+      <div class="social-link">
         <img class="icon" src="{{socialLink.iconPath}}" alt="icon">
         <a class="link"
            href="{{socialLink.link}}">{{socialLink.name}}</a>
       </div>
     </div>
 
-    <div class="container">
-      <div class="social-link" >
+    <div *ngIf="showMoreInfo" class="container">
+
+      <div class="social-link" (click)="openOverlay()">
         <img class="icon" src="assets/icons/question.svg" alt="stain">
         <a class="link">more info</a>
+      </div>
+
+
+      <div id="overlay" (click)="closeOverlay()">
+        <app-info-modal class="overlay-container"></app-info-modal>
       </div>
     </div>
 

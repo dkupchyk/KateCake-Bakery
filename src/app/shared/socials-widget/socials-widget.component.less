@@ -4,8 +4,8 @@
   position: relative;
   background-color: @primary-white;
   border-radius: 10px;
+  width: auto;
   height: 10vh;
-  width: 50vw;
 
   & .social-links {
     width: 100%;
@@ -15,10 +15,11 @@
 
     & .container {
       display: flex;
-      margin: auto 3%;
+      margin: auto 2%;
 
       & .social-link {
         display: flex;
+        cursor: pointer;
 
         & .icon {
           width: 25px;
@@ -32,30 +33,64 @@
         }
       }
     }
+
+    & #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 20;
+      cursor: pointer;
+
+      & .overlay-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        width: 60%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: @primary-white;
+        border-radius: 10px;
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 770px) {
-
   .overlay-links {
-    height: 25vh;
-    width: 70vw;
-    top: 30vh;
-    left: 15vw;
+    width: 100%;
+    height: auto;
 
     & .social-links {
-      width: 100%;
-      margin: 0;
-      padding-top: 3px;
       display: block;
+      padding: 3%;
 
-      & .social-link {
-        display: flex;
-        width: 100%;
+      & .container {
+        width: auto;
+        margin: 5% auto;
+        justify-content: center;
 
-        & .link {
-          margin-left: 5%;
-          font-size: 3vh;
+        & .social-link {
+          & .link {
+            font-size: 3vh;
+          }
+        }
+      }
+
+      & #overlay {
+        overflow-y: scroll;
+
+        & .overlay-container {
+          top: 50%;
+          left: 50%;
+          height: 80%;
+          width: 90%;
         }
       }
     }
