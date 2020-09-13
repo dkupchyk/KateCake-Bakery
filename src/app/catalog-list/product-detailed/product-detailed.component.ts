@@ -6,6 +6,7 @@ import {Subscription} from 'rxjs';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {Product} from '../../shared/models/product.model';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
+import {TELEGRAM} from '../../shared/constants/socials.constant';
 
 @Component({
   selector: 'app-product-detailed',
@@ -18,6 +19,7 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
   categoryName: CategoriesEnum;
   isLoading = true;
   subscription: Subscription[] = [];
+  telegramLink = TELEGRAM.link;
 
   constructor(private router: Router,
               private route: ActivatedRoute,

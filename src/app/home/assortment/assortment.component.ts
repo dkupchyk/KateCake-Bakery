@@ -5,6 +5,7 @@ import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {Category} from '../../shared/models/category.model';
 import {DataStorageService} from '../../shared/data-storage.service';
 import {HeaderService} from '../../shared/header/header.service';
+import {TELEGRAM} from '../../shared/constants/socials.constant';
 
 @Component({
   selector: 'app-home-assortment',
@@ -14,6 +15,7 @@ import {HeaderService} from '../../shared/header/header.service';
 })
 export class AssortmentComponent {
   @Input() categories: Category[];
+  telegramLink = TELEGRAM.link;
 
   constructor(private router: Router,
               private dataStorage: DataStorageService,
