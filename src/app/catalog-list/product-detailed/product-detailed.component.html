@@ -14,10 +14,10 @@
   <div class="col overview">
     <h3 class="main-heading">{{product.name}}</h3>
     <div class="text">
-      <p class="block"><span class="highlighted">Ингридиенты: </span>{{product.ingredients}}</p>
-      <p class="block"><span class="highlighted">Возможные добавки: </span>{{product.additionals}}</p>
-      <p class="block"><span class="highlighted">Вес: </span>{{product.weight}}</p>
-      <p class="block"><span class="highlighted">Цена: </span>{{product.price}} грн</p>
+      <p class="block"
+         *ngFor="let productDetailedInfoItem of productDetailedInfo">
+        <span class="highlighted">{{productDetailedInfoItem.title}}: </span>
+        {{productDetailedInfoItem.value}}</p>
     </div>
     <a href="{{telegramLink}}" class="button order-button">Заказать</a>
   </div>

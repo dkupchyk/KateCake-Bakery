@@ -16,6 +16,8 @@ import {TELEGRAM} from '../../shared/constants/socials.constant';
 export class ProductDetailedComponent implements OnInit, OnDestroy {
   productId: number;
   product: Product;
+  productDetailedInfo: { title: string, value: any }[] = [];
+
   categoryName: CategoriesEnum;
   isLoading = true;
   subscription: Subscription[] = [];
@@ -51,8 +53,30 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
       this.dataStorage.fetchProductData(this.categoryName, this.productId).pipe(take(1)).subscribe(
         productData => {
           this.product = productData;
+          this.changeProductInfo(this.product);
           this.isLoading = false;
         });
     }));
+  }
+
+  changeProductInfo(product: Product): void {
+    this.productDetailedInfo = [
+      {
+        title: 'Ингридиенты',
+        value: product.ingredients
+      },
+      {
+        title: 'Возможные добавки',
+        value: product.additionals
+      },
+      {
+        title: 'Вес',
+        value: product.weight
+      },
+      {
+        title: 'Цена',
+        value: product.price
+      },
+    ];
   }
 }

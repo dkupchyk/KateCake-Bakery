@@ -3,15 +3,9 @@
 
 .catalog-row,
 .intro-row {
-  display: flex;
   margin: 2% 7%;
   justify-content: center;
   text-align: center;
-
-  .catalog-col,
-  .intro-col {
-    display: block;
-  }
 }
 
 .intro-row {
@@ -45,23 +39,7 @@
 }
 
 @media only screen and (max-width: 770px) {
-  .loading-div {
-    height: 50vh;
-    justify-content: center;
-
-    .loading-text {
-      color: @primary-peach;
-      text-align: center;
-      font-size: 10vw;
-      margin: 10% 0;
-    }
-  }
-
   .catalog-row,
-  .intro-row {
-    display: block;
-  }
-
   .intro-row {
     .image {
       width: 100%;

@@ -1,17 +1,6 @@
 @import '../../shared/variables.less';
 @import '../../shared/styles.less';
 
-.loading-div {
-  height: 50vh;
-  justify-content: center;
-
-  .loading-text {
-    color: @primary-peach;
-    text-align: center;
-    margin: 10% 0;
-  }
-}
-
 .row {
   display: flex;
   padding: 5%;
@@ -68,20 +57,7 @@
 }
 
 @media only screen and (max-width: 770px) {
-  .loading-div {
-    height: 50vh;
-    justify-content: center;
-
-    .loading-text {
-      color: @primary-peach;
-      text-align: center;
-      font-size: 10vw;
-      margin: 10% 0;
-    }
-  }
-
   .row {
-    display: block;
     padding: 0;
     justify-content: center;
 
@@ -89,7 +65,6 @@
       width: 90%;
       margin: auto;
       justify-content: center;
-      display: block;
     }
   }
 

@@ -2,9 +2,9 @@
 
 <div *ngIf="!isLoading">
   <div class="intro">
-    <div class="intro-row">
-      <img class="intro-col image" src="{{category.catalogImagePath}}" alt="cake">
-      <div class="intro-col text">
+    <div class="intro-row row">
+      <img class="intro-col col image" src="{{category.catalogImagePath}}" alt="cake">
+      <div class="intro-col col text">
         <h3 class="main-heading">{{category.name}}</h3>
         <p class="text">{{category.detailedText}}</p>
       </div>
@@ -12,8 +12,8 @@
   </div>
 
   <div class="catalog">
-    <div class="catalog-row" *ngIf="category.items">
-      <div class="catalog-col" *ngFor="let product of category.items">
+    <div class="catalog-row row" *ngIf="category.items">
+      <div class="catalog-col col" *ngFor="let product of category.items">
         <img class="image"
              src="{{product.mainPhoto}}"
              alt="cake"
