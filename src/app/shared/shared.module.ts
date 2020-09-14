@@ -12,6 +12,7 @@ import {SocialsWidgetComponent} from './socials-widget/socials-widget.component'
 import {DataStorageService} from './data-storage.service';
 import {LoadingWidgetComponent} from './loading-widget/loading-widget.component';
 import {InfoModalComponent} from './info-modal/info-modal.component';
+import {CarouselWidgetComponent} from './carousel-widget/carousel-widget.component';
 
 @NgModule({
   declarations: [
@@ -21,18 +22,21 @@ import {InfoModalComponent} from './info-modal/info-modal.component';
     HeaderShrunkComponent,
     HeaderExpandedComponent,
     LoadingWidgetComponent,
-    InfoModalComponent
+    InfoModalComponent,
+    CarouselWidgetComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SocialsWidgetComponent,
     HttpClientModule,
-    LoadingWidgetComponent
+    LoadingWidgetComponent,
+    InfoModalComponent,
+    CarouselWidgetComponent
   ],
   providers: [DataStorageService, HeaderService]
 })
