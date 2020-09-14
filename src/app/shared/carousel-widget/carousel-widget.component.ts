@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carousel-widget',
   templateUrl: './carousel-widget.component.html',
-  styleUrls: ['./carousel-widget.component.less']
+  styleUrls: ['./carousel-widget.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselWidgetComponent implements OnInit {
   @Input() settings: {
@@ -14,7 +15,7 @@ export class CarouselWidgetComponent implements OnInit {
     showIndicators: boolean
   };
   @Input() customSlidesClass: string;
-  @Input() slides: any[];
+  @Input() slides: HTMLElement[];
 
   startIndex = 0;
   activatedSlides: number[] = [];

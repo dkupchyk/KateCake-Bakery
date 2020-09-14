@@ -21,8 +21,7 @@
     }
 
     .quote {
-      font-family: 'Playfair Display SC', serif;
-      font-size: 10vw;
+      .fontStyle(@font-playfair-display, 10vw);
       margin: 0;
     }
 
@@ -55,13 +54,8 @@
 @media only screen and (max-width: 770px) {
   .reviews-section {
     & .reviews-row {
-      display: flex;
       position: relative;
       justify-content: center;
-
-      & .reviews-col {
-        display: block;
-      }
 
       & .carousel {
         width: 70vw;

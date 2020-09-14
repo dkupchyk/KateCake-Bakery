@@ -39,22 +39,13 @@
     }
 
     .logo {
+      .fontStyle(@font-dancing-script, 2vw);
       text-align: center;
-      font-family: 'Dancing Script', cursive;
-      color: @primary-black;
       display: inline-block;
       margin: 0px 25px;
 
-      .with-love-text {
-        font-size: 2vw;
-        margin: 0;
-        outline: none;
-      }
-
       .kate-cake-text {
         font-size: 4vw;
-        margin: 0;
-        outline: none;
       }
     }
   }
@@ -96,16 +87,6 @@
 
     .header-list {
       padding-top: 25vh;
-
-      .logo {
-        .with-love-text {
-          font-size: 8vw;
-        }
-
-        .kate-cake-text {
-          font-size: 10vw;
-        }
-      }
     }
   }
 }
@@ -126,4 +107,15 @@
     width: 80%;
     left: 10%;
   }
+
+  .socials-row {
+    .header-list {
+      .logo {
+        .kate-cake-text {
+          font-size: 10vw;
+        }
+      }
+    }
+  }
 }
+

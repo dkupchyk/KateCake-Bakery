@@ -1,4 +1,3 @@
-@import '../variables';
 @import '../styles';
 
 .footer {
@@ -10,21 +9,12 @@
 .col-logo {
   width: 25vw;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
-  color: @primary-black;
+  .fontStyle(@font-dancing-script, 2vw);
   display: inline-block;
   margin-top: 50px;
 
-  .with-love-text {
-    font-size: 2vw;
-    margin: 0;
-    outline: none;
-  }
-
   .kate-cake-text {
     font-size: 4vw;
-    margin: 0;
-    outline: none;
   }
 }
 

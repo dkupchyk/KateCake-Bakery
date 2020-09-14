@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../styles';
 
 .info-modal {
   text-align: center;
@@ -9,19 +9,10 @@
 
   & .logo {
     margin: 3% 0;
-    font-family: 'Dancing Script', cursive;
-    color: @primary-black;
-
-    .with-love-text {
-      font-size: 1.5vw;
-      margin: 0;
-      outline: none;
-    }
+    .fontStyle(@font-dancing-script, 1.5vw);
 
     .kate-cake-text {
       font-size: 2.5vw;
-      margin: 0;
-      outline: none;
     }
   }
 
@@ -66,19 +57,6 @@
         font-size: 10vw;
       }
     }
-
-    //.contacts {
-    //  margin: 15px 0;
-    //
-    //  & .background-line {
-    //    background-color: @primary-peach;
-    //    background-size: 100% 1em;
-    //    background-position: 100% 200%;
-    //    color: @primary-white;
-    //    font-weight: 700;
-    //    font-style: italic;
-    //  }
-    //}
   }
 }
 

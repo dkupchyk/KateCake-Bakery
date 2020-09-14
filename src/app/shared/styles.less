@@ -1,8 +1,31 @@
+@import "variables";
+
+.fontStyle(@family, @size, @weight: normal, @color: @primary-black, @style: normal) {
+  font-family: @family;
+  font-size: @size;
+  font-weight: @weight;
+  color: @color;
+  font-style: @style;
+}
+
 .row {
   display: flex;
 
   & .col {
     display: block;
+  }
+}
+
+.logo {
+
+  .with-love-text {
+    margin: 0;
+    outline: none;
+  }
+
+  .kate-cake-text {
+    margin: 0;
+    outline: none;
   }
 }
 
@@ -49,8 +72,7 @@
 
 & .heading {
   text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: 4vw;
+  .fontStyle(@font-dancing-script, 4vw);
 }
 
 @media only screen and (max-width: 770px) {
@@ -67,10 +89,19 @@
     justify-content: center;
 
     .loading-text {
-      color: @primary-peach;
+      .fontStyle(@font-montserrat, 10vw, normal, @primary-peach);
       text-align: center;
-      font-size: 10vw;
       margin: 10% 0;
+    }
+  }
+
+  .logo {
+    .with-love-text {
+      font-size: 8vw;
+    }
+
+    .kate-cake-text {
+      font-size: 10vw;
     }
   }
 }

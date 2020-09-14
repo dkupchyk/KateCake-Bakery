@@ -1,14 +1,11 @@
-@import '../../shared/variables.less';
 @import '../../shared/styles.less';
 
 .row {
-  display: flex;
   padding: 5%;
   justify-content: center;
 
   .col {
     width: 40%;
-    display: block;
   }
 }
 
@@ -35,10 +32,8 @@
   margin-top: 3%;
 
   .main-heading {
+    .fontStyle(@font-montserrat, 2vw, 500, @color: @primary-black, italic);
     text-align: center;
-    font-size: 2vw;
-    font-weight: 500;
-    font-style: italic;
   }
 
   .block {
@@ -110,13 +105,9 @@
     }
 
     .order-button {
-      //margin: 5% 27% 20% 27%;
       font-size: 6vw;
-      //position: relative;
-      //text-decoration: none;
       top: 20px;
       left: 30%;
     }
   }
-
 }
