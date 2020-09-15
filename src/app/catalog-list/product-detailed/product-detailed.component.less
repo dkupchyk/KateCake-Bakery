@@ -10,8 +10,15 @@
 }
 
 .photos {
-  .main-image {
+  .main-image-placeholder {
     width: 30vw;
+    height: 65vh;
+    margin-bottom: 20px;
+
+    .main-image {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .additional-photos {
@@ -22,7 +29,13 @@
     .image {
       width: 5vw;
       justify-content: center;
-      margin: 2% 5%;
+      margin: 2% 3%;
+      opacity: 0.6;
+      transition: opacity .4s;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
@@ -64,9 +77,10 @@
   }
 
   .photos {
-    .main-image {
-      width: 60vw;
-      margin-left: 18%;
+    .main-image-placeholder {
+      width: 80vw;
+      height: 65vh;
+      margin: 0 auto 10% auto;
     }
 
     .additional-photos {

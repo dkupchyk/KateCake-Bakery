@@ -15,7 +15,7 @@ export class CarouselWidgetComponent implements OnInit {
     showIndicators: boolean
   };
   @Input() customSlidesClass: string;
-  @Input() slides: HTMLElement[];
+  @Input() slides: any[];
 
   startIndex = 0;
   activatedSlides: number[] = [];

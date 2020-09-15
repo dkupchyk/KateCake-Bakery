@@ -2,10 +2,15 @@
 
 <div *ngIf="!isLoading" class="product-detailed row">
   <div class="col photos">
-    <img class="image main-image" src="{{product.mainPhoto}}" alt="main-photo">
+    <div class="main-image-placeholder"
+         (@mainPhoto.done)="onDone($event)"
+         [@mainPhoto]="mainPhotoState">
+      <img class="image main-image" src="{{mainPhoto}}" alt="main-photo">
+    </div>
     <div class="additional-photos">
       <img class="image"
            *ngFor="let photo of product.otherPhotos"
+           (click)="changeMainPhoto(photo)"
            src="{{photo}}"
            alt="main-photo">
     </div>

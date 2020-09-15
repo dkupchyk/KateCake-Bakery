@@ -27,7 +27,7 @@ import {CarouselWidgetComponent} from './carousel-widget/carousel-widget.compone
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

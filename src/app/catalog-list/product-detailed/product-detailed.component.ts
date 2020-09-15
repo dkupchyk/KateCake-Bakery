@@ -7,11 +7,25 @@ import {DataStorageService} from '../../shared/data-storage.service';
 import {Product} from '../../shared/models/product.model';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {TELEGRAM} from '../../shared/constants/socials.constant';
+import {animate, group, keyframes, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-product-detailed',
   templateUrl: './product-detailed.component.html',
-  styleUrls: ['./product-detailed.component.less']
+  styleUrls: ['./product-detailed.component.less'],
+  animations: [
+    trigger('mainPhoto', [
+      state('in', style({
+        opacity: 1
+      })),
+      state('out', style({
+        opacity: 0
+      })),
+      transition('* <=> *', [
+        animate(300)
+      ])
+    ]),
+  ]
 })
 export class ProductDetailedComponent implements OnInit, OnDestroy {
   productId: number;
@@ -22,6 +36,9 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
   isLoading = true;
   subscription: Subscription[] = [];
   telegramLink = TELEGRAM.link;
+
+  mainPhoto: string;
+  mainPhotoState = 'in';
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -54,9 +71,17 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
         productData => {
           this.product = productData;
           this.changeProductInfo(this.product);
+          this.mainPhoto = this.product.mainPhoto;
           this.isLoading = false;
         });
     }));
+  }
+
+  changeMainPhoto(imagePath: string): void {
+    this.mainPhotoState = 'out';
+    setTimeout(() => {
+      this.mainPhoto = imagePath;
+    }, 300);
   }
 
   changeProductInfo(product: Product): void {
@@ -78,5 +103,9 @@ export class ProductDetailedComponent implements OnInit, OnDestroy {
         value: product.price
       },
     ];
+  }
+
+  onDone($event): void {
+    this.mainPhotoState = 'in';
   }
 }
