@@ -2,12 +2,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {take} from 'rxjs/operators';
 import {Subscription} from 'rxjs';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {DataStorageService} from '../../shared/data-storage.service';
 import {Product} from '../../shared/models/product.model';
 import {CategoriesEnum} from '../../shared/constants/categories.constant';
 import {TELEGRAM} from '../../shared/constants/socials.constant';
-import {animate, group, keyframes, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-product-detailed',

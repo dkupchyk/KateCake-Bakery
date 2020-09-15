@@ -10,7 +10,9 @@
 
     <div class="slide" [ngStyle]="customSlidesClass"
          *ngFor="let slide of slides.slice(startIndex, startIndex + settings.itemsPerSlide)">
-      <div class="slider-content">
+      <div class="slider-content"
+           (@slides.done)="onDone($event)"
+           [@slides]="slidesState">
         <img [src]="slide.image" alt="image slide">
       </div>
     </div>
