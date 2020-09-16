@@ -12,28 +12,10 @@ import {DataStorageService} from '../shared/data-storage.service';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  reviews: Review[] = [];
+  reviews: Review[] = null;
   assortmentCategories: Category[] = [];
   subscription: Subscription;
   isLoading = true;
-
-  settings = {
-    itemsPerSlide: 3,
-    interval: 2000,
-    pauseOnFocus: true,
-    showArrows: true,
-    showIndicators: true
-  };
-  customSlidesClass = '';
-  slides: any[] = [
-    {image: 'assets/images/main/assortment-cakes.png'},
-    {image: 'assets/images/main/assortment-cheesecakes.png'},
-    {image: 'assets/images/main/assortment-cupcakes.png'},
-    {image: 'assets/images/main/assortment-cakes.png'},
-    {image: 'assets/images/main/assortment-cheesecakes.png'},
-    {image: 'assets/images/main/assortment-cupcakes.png'},
-    {image: 'assets/images/main/assortment-cakes.png'}
-  ];
 
   constructor(private dataStorage: DataStorageService) {
   }
