@@ -4,10 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:ru": "ng serve --configuration=ru",
+    "start:en": "ng serve --configuration=en",
     "build": "ng build",
+    "build:ru": "ng build --configuration=ru",
+    "build:en": "ng build --configuration=en",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "int:extract": "ng xi18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +21,7 @@
     "@angular/compiler": "~10.0.11",
     "@angular/core": "~10.0.11",
     "@angular/forms": "~10.0.11",
+    "@angular/localize": "^10.0.12",
     "@angular/platform-browser": "~10.0.11",
     "@angular/platform-browser-dynamic": "~10.0.11",
     "@angular/router": "~10.0.11",

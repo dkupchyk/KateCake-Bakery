@@ -4,8 +4,9 @@
     <a *ngFor="let headerItem of headerItemArrayRight"
        class="link"
        [ngClass]="{'active' : headerItem.activated}"
-       (click)="headerComponent.changePath(headerItem.enumParam)">
-      {{headerItem.title}}
+       (click)="headerComponent.changePath(headerItem.enumParam)"
+       i18n="Header element|One of headers element@@headerElement">
+      {headerItem.title, select, cakes {cakes}}
     </a>
 
     <div class="logo" (click)="headerComponent.unactivateAllLinks()">
@@ -16,7 +17,8 @@
     <a *ngFor="let headerItem of headerItemArrayLeft"
        class="link"
        [ngClass]="{'active' : headerItem.activated}"
-       (click)="headerComponent.changePath(headerItem.enumParam)">
+       (click)="headerComponent.changePath(headerItem.enumParam)"
+       i18n="Header element|One of headers element">
       {{headerItem.title}}
     </a>
 

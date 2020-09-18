@@ -58,6 +58,18 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "ru": {
+              "aot": true,
+              "outputPath": "dist/under-c-ru",
+              "i18nFile": "src/locale/messages.ru.xlf",
+              "i18nLocale": "ru"
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/under-c-en",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nLocale": "en"
             }
           }
         },
@@ -69,6 +81,12 @@
           "configurations": {
             "production": {
               "browserTarget": "KateCake-Bakery:build:production"
+            },
+            "ru": {
+              "browserTarget": "KateCake-Bakery:build:ru"
+            },
+            "en": {
+              "browserTarget": "KateCake-Bakery:build:en"
             }
           }
         },

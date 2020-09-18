@@ -21,7 +21,7 @@ import {InfoModalComponent} from './info-modal/info-modal.component';
     HeaderShrunkComponent,
     HeaderExpandedComponent,
     LoadingWidgetComponent,
-    InfoModalComponent,
+    InfoModalComponent
   ],
   imports: [
     CommonModule,
