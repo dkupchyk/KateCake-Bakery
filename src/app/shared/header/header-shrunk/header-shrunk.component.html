@@ -6,8 +6,9 @@
       <a *ngFor="let headerItem of headerComponent.headerItemArray"
          class="link"
          [ngClass]="{'active' : headerItem.activated}"
-         (click)="changePath(headerItem.enumParam)">
-        {{headerItem.title}}
+         (click)="changePath(headerItem.enumParam)"
+         i18n="Header element|One of headers element@@headerElement">
+        {headerItem.title, select, cakes {cakes}}
       </a>
 
     </div>

@@ -17,8 +17,9 @@
 
       <a *ngFor="let headerItem of headerItemArrayRight"
          class="link"
-         (click)="changePath(headerItem.enumParam)">
-        {{headerItem.title}}
+         (click)="changePath(headerItem.enumParam)"
+         i18n="Header element|One of header element@@headerElement">
+        {headerItem.title, select, cakes {cakes}}
       </a>
 
       <div class="logo">
@@ -28,8 +29,9 @@
 
       <a *ngFor="let headerItem of headerItemArrayLeft"
          class="link"
-         (click)="changePath(headerItem.enumParam)">
-        {{headerItem.title}}
+         (click)="changePath(headerItem.enumParam)"
+         i18n="Header element|One of header element@@headerElement">
+        {headerItem.title, select, cakes {cakes}}
       </a>
 
     </div>

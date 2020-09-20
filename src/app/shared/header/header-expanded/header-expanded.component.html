@@ -18,8 +18,8 @@
        class="link"
        [ngClass]="{'active' : headerItem.activated}"
        (click)="headerComponent.changePath(headerItem.enumParam)"
-       i18n="Header element|One of headers element">
-      {{headerItem.title}}
+       i18n="Header element|One of headers element@@headerElement">
+      {headerItem.title, select, cakes {cakes}}
     </a>
 
   </div>
