@@ -12,6 +12,7 @@ import {SocialsWidgetComponent} from './socials-widget/socials-widget.component'
 import {DataStorageService} from './data-storage.service';
 import {LoadingWidgetComponent} from './loading-widget/loading-widget.component';
 import {InfoModalComponent} from './info-modal/info-modal.component';
+import {InfiniteScrollDirective} from './infinite-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {InfoModalComponent} from './info-modal/info-modal.component';
     HeaderShrunkComponent,
     HeaderExpandedComponent,
     LoadingWidgetComponent,
-    InfoModalComponent
+    InfoModalComponent,
+    InfiniteScrollDirective
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import {InfoModalComponent} from './info-modal/info-modal.component';
     SocialsWidgetComponent,
     HttpClientModule,
     LoadingWidgetComponent,
-    InfoModalComponent
+    InfoModalComponent,
+    InfiniteScrollDirective
   ],
   providers: [DataStorageService, HeaderService]
 })

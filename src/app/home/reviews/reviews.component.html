@@ -3,7 +3,7 @@
   <h3 class="heading">Reviews</h3>
 
   <div class="carousel">
-    <div class="row slides-row">
+    <div class="row slides-row" *ngIf="reviews">
       <div class="slide col"
            *ngFor="let review of reviews.slice(startIndex, startIndex + itemsPerSlide)">
         <div class="slider-content"

@@ -12,6 +12,7 @@ import {DataStorageService} from '../shared/data-storage.service';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  currentsSection = 2;
   reviews: Review[] = null;
   assortmentCategories: Category[] = [];
   subscription: Subscription;
@@ -22,8 +23,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscribeToLoading();
-    this.subscribeToAssortmentData();
-    this.subscribeToReviewsData();
   }
 
   ngOnDestroy(): void {
@@ -34,6 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscription = this.dataStorage.isLoading.subscribe(value => {
       this.isLoading = value;
     });
+    this.isLoading = false;
   }
 
   subscribeToAssortmentData(): void {
@@ -51,4 +51,26 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       });
   }
+
+  processData(): void {
+    switch (this.currentsSection) {
+      case 3:
+        this.subscribeToAssortmentData();
+        break;
+
+      case 4:
+        this.subscribeToReviewsData();
+        break;
+
+      default:
+        break;
+    }
+    this.changeVisibility(this.currentsSection);
+    this.currentsSection++;
+  }
+
+  private changeVisibility(id: number): void {
+    (document.getElementById('component-' + id) as HTMLElement).style.display = 'block';
+  }
+
 }

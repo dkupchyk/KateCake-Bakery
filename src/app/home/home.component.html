@@ -1,9 +1,12 @@
 <app-loading-widget *ngIf="isLoading"></app-loading-widget>
 
-<div *ngIf="!isLoading">
+<div class="infinite-scroller"
+     *ngIf="!isLoading"
+     appInfiniteScroll
+     (loadMore)="processData()">
   <app-home-main></app-home-main>
-  <app-home-about-kate></app-home-about-kate>
-  <app-home-assortment [categories]="assortmentCategories"></app-home-assortment>
-  <app-home-reviews [reviews]="reviews"></app-home-reviews>
-  <app-home-socials></app-home-socials>
+  <app-home-about-kate id="component-2"></app-home-about-kate>
+  <app-home-assortment id="component-3" [categories]="assortmentCategories"></app-home-assortment>
+  <app-home-reviews id="component-4" [reviews]="reviews"></app-home-reviews>
+  <app-home-socials id="component-5"></app-home-socials>
 </div>
