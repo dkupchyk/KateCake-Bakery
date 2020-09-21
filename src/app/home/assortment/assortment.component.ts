@@ -29,4 +29,8 @@ export class AssortmentComponent {
       queryParams: {type: enumEquivalent}
     });
   }
+
+  redirectToTelegram(): void {
+    window.location.href = this.telegramLink;
+  }
 }

@@ -2,8 +2,11 @@
   <img class="col main-column cake" src="assets/images/main/main-cake.png" alt="cake">
   <div class="col main-column text-column">
     <p class="text" i18n>Почувствуешь <span class="text-love">любовь</span> в каждом кусочке</p>
-    <button class="button choose-cake-button"
-            (click)="toCakeCatalog()" i18n>Выбрать свой идеальный тортик
+    <button tabindex="0"
+            class="button choose-cake-button"
+            (keydown.enter)="toCakeCatalog()"
+            (click)="toCakeCatalog()" i18n>
+      Выбрать свой идеальный тортик
     </button>
     <img class="stain gray-stain" src="assets/images/stains/gray-stain-1.svg" alt="stain">
   </div>

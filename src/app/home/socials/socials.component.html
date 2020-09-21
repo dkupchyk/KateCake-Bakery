@@ -15,9 +15,11 @@
   <div class="socials-row">
     <div class="header-list" *ngIf="screenWidth > 770">
 
-      <a *ngFor="let headerItem of headerItemArrayRight"
-         class="link"
+      <a class="link"
+         tabindex="0"
+         *ngFor="let headerItem of headerItemArrayRight"
          (click)="changePath(headerItem.enumParam)"
+         (keydown.enter)="changePath(headerItem.enumParam)"
          i18n="Header element|One of header element@@headerElement">
         {headerItem.title, select, cakes {cakes}}
       </a>
@@ -27,9 +29,11 @@
         <p class="kate-cake-text">Kate Cake</p>
       </div>
 
-      <a *ngFor="let headerItem of headerItemArrayLeft"
-         class="link"
+      <a class="link"
+         tabindex="0"
+         *ngFor="let headerItem of headerItemArrayLeft"
          (click)="changePath(headerItem.enumParam)"
+         (keydown.enter)="changePath(headerItem.enumParam)"
          i18n="Header element|One of header element@@headerElement">
         {headerItem.title, select, cakes {cakes}}
       </a>
