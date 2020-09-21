@@ -1,6 +1,7 @@
 <app-loading-widget *ngIf="isLoading"></app-loading-widget>
 
 <div *ngIf="!isLoading">
+
   <div class="intro">
     <div class="intro-row row">
       <img class="intro-col col image" src="{{category.catalogImagePath}}" alt="cake">
@@ -12,8 +13,10 @@
   </div>
 
   <div class="catalog">
-    <div class="catalog-row row" *ngIf="category.items">
-      <div class="catalog-col col" *ngFor="let product of category.items">
+    <div class="catalog-row row"
+         *ngIf="category.items">
+      <div class="catalog-col col clickable"
+           *ngFor="let product of category.items">
         <img class="image"
              src="{{product.mainPhoto}}"
              alt="cake"
@@ -23,6 +26,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <app-footer></app-footer>

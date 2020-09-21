@@ -23,6 +23,7 @@
         <img [ngStyle]="{'opacity': activatedSlides.includes(i) ? '0.5' : '0.2'}"
              (keydown.enter)="changeSlides(i)"
              (click)="changeSlides(i)"
+             class="clickable"
              src="assets/icons/circle.svg"
              alt="indicator">
       </div>

@@ -2,29 +2,38 @@
 
 <div *ngIf="!isLoading" class="product-detailed row">
   <div class="col photos">
+
     <div class="main-image-placeholder"
          (@mainPhoto.done)="onDone($event)"
          [@mainPhoto]="mainPhotoState">
       <img class="image main-image" src="{{mainPhoto}}" alt="main-photo">
     </div>
+
     <div class="additional-photos">
-      <img class="image"
+      <img class="image clickable"
            *ngFor="let photo of product.otherPhotos"
            (click)="changeMainPhoto(photo)"
            src="{{photo}}"
            alt="main-photo">
     </div>
+
   </div>
 
   <div class="col overview">
     <h3 class="main-heading">{{product.name}}</h3>
+
     <div class="text">
       <p class="block"
          *ngFor="let productDetailedInfoItem of productDetailedInfo">
         <span class="highlighted">{{productDetailedInfoItem.title}}: </span>
         {{productDetailedInfoItem.value}}</p>
     </div>
-    <a href="{{telegramLink}}" class="button order-button">Заказать</a>
+
+    <a href="{{telegramLink}}"
+       class="button order-button clickable">
+      Заказать
+    </a>
+
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {take} from 'rxjs/operators';
 import {Subscription} from 'rxjs';
+import {take} from 'rxjs/operators';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {DataStorageService} from '../../shared/data-storage.service';

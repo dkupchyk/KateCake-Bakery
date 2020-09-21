@@ -2,7 +2,7 @@
   <h3 class="heading">Assortment</h3>
 
   <div class="row assortment-row">
-    <div class="col assortment-col"
+    <div class="col assortment-col clickable"
          *ngFor="let category of categories"
          (click)="toCatalog(+category.enumEquivalent)">
       <div class="swap-on-hover">
@@ -17,8 +17,8 @@
 
   <a i18n
      tabindex="0"
-     (keydown.enter)="redirectToTelegram()"
      href="{{telegramLink}}"
-     class="button order-button">Заказать</a>
+     (keydown.enter)="redirectToTelegram()"
+     class="button order-button clickable">Заказать</a>
 
 </section>

@@ -1,7 +1,7 @@
 <div class="header-expanded">
   <div class="header-list">
 
-    <a class="link"
+    <a class="link clickable"
        tabindex="0"
        *ngFor="let headerItem of headerItemArrayRight"
        [ngClass]="{'active' : headerItem.activated}"
@@ -11,7 +11,7 @@
       {headerItem.title, select, cakes {cakes}}
     </a>
 
-    <div class="logo"
+    <div class="logo clickable"
          tabindex="-1"
          (click)="headerComponent.unactivateAllLinks()"
          (keydown.enter)="headerComponent.unactivateAllLinks()">
@@ -19,7 +19,7 @@
       <p class="kate-cake-text">Kate Cake</p>
     </div>
 
-    <a class="link"
+    <a class="link clickable"
        tabindex="0"
        *ngFor="let headerItem of headerItemArrayLeft"
        [ngClass]="{'active' : headerItem.activated}"
