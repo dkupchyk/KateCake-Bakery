@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, HostListener, Input, OnInit} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {Review} from '../../shared/models/review.model';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-home-reviews',

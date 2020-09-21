@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {take} from 'rxjs/operators';
 
@@ -12,10 +12,10 @@ import {DataStorageService} from '../shared/data-storage.service';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  currentsSection = 2;
   reviews: Review[] = null;
   assortmentCategories: Category[] = [];
   subscription: Subscription;
+  currentsSection = 2;
   isLoading = true;
 
   constructor(private dataStorage: DataStorageService) {
@@ -70,7 +70,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private changeVisibility(id: number): void {
-    (document.getElementById('component-' + id) as HTMLElement).style.display = 'block';
+    if (id > 0 && id < 6) {
+      (document.getElementById('component-' + id) as HTMLElement).style.display = 'block';
+    }
   }
-
 }

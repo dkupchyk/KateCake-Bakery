@@ -1,19 +1,6 @@
-import {
-  Directive,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output
-} from '@angular/core';
-
-import {
-  filter,
-  map,
-  scan,
-  throttleTime
-} from 'rxjs/operators';
-
-import { fromEvent } from 'rxjs';
+import {Directive, EventEmitter, OnInit, Output} from '@angular/core';
+import {filter, map, scan} from 'rxjs/operators';
+import {fromEvent} from 'rxjs';
 
 interface ScrollEvent {
   currYOffset: number;
@@ -37,14 +24,13 @@ export class InfiniteScrollDirective implements OnInit {
           event,
           {canProceed: event.currYOffset > acc.currYOffset}),
           seed),
-        filter(e => this.shouldTrigger(e)),
-        throttleTime(1000),
-      ).subscribe(e => this.loadMore.emit(e.originalEvent));
+        filter(e => this.shouldTrigger(e)))
+      .subscribe(e => this.loadMore.emit(e.originalEvent));
   }
 
   private shouldTrigger(event: ScrollEvent): boolean {
-    const { scrollHeight } = window.document.body;
-    const { pageYOffset, innerHeight } = window;
+    const {scrollHeight} = window.document.body;
+    const {pageYOffset, innerHeight} = window;
     return event.canProceed && (pageYOffset + innerHeight >= scrollHeight - 100);
   }
 }
