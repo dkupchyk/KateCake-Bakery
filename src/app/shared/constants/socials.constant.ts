@@ -7,7 +7,7 @@ export const INSTAGRAM = {
 export const TELEGRAM = {
   name: 'telegram',
   iconPath: 'assets/icons/telegram.svg',
-  link: 'https://web.telegram.org/#/im?p=@katecakebakery'
+  link: 'https://t.me/katecakebakery'
 };
 
 export const GMAIL = {
