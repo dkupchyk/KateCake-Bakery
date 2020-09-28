@@ -6,14 +6,13 @@
     </div>
 
     <div class="col col-more">
-      <p class="additional-text" i18n>Посмотреть также:</p>
+      <p class="additional-text">Посмотреть также:</p>
 
       <div class="row">
         <a class="col link clickable"
            *ngFor="let headerItem of headerItemArray"
-           (click)="changePath(headerItem.enumParam)"
-           i18n="Header element|One of headers element@@headerElement">
-          {headerItem.title, select, cakes {cakes}}
+           (click)="changePath(headerItem.enumParam)">
+          {{headerItem.title}}
         </a>
       </div>
 

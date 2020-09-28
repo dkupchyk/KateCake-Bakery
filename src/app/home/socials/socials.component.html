@@ -19,9 +19,8 @@
          tabindex="0"
          *ngFor="let headerItem of headerItemArrayRight"
          (click)="changePath(headerItem.enumParam)"
-         (keydown.enter)="changePath(headerItem.enumParam)"
-         i18n="Header element|One of header element@@headerElement">
-        {headerItem.title, select, cakes {cakes}}
+         (keydown.enter)="changePath(headerItem.enumParam)">
+        {{headerItem.title}}
       </a>
 
       <div class="logo">
@@ -33,9 +32,8 @@
          tabindex="0"
          *ngFor="let headerItem of headerItemArrayLeft"
          (click)="changePath(headerItem.enumParam)"
-         (keydown.enter)="changePath(headerItem.enumParam)"
-         i18n="Header element|One of header element@@headerElement">
-        {headerItem.title, select, cakes {cakes}}
+         (keydown.enter)="changePath(headerItem.enumParam)">
+        {{headerItem.title}}
       </a>
 
     </div>
